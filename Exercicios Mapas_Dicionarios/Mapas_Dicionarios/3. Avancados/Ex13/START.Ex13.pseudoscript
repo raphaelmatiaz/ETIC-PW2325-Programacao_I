@@ -1,0 +1,72 @@
+# ================== ENUNCIADO ======================================================================== 
+
+#13. Registo de Finanças Pessoais: Criar um programa que permita ao utilizador registar
+#despesas e receitas pessoais. O programa deve calcular o saldo atual. Nota: O aluno
+#deve criar estruturas para representar despesas e receitas.
+
+# ======= SETUP SECTION ======= 
+
+# Modelo para representar uma transação financeira
+modelo Transacao:
+    construtor(descricao, valor):
+        Transacao.descricao = descricao
+        Transacao.valor = valor
+
+# Lista para armazenar transações (despesas e receitas)
+listaTransacoes = []
+
+# Função para registar uma despesa
+funcao RegistarDespesa()
+    entrada("Digite a descrição da despesa: ", descricaoDespesa)
+    entrada("Digite o valor da despesa: ", valorDespesa)
+    despesa = Transacao(descricaoDespesa, -valorDespesa)  # O valor da despesa é negativo
+    adicionarItem(listaTransacoes, despesa)
+    imprime("Despesa registada com sucesso!")
+
+# Função para registar uma receita
+funcao RegistarReceita()
+    entrada("Digite a descrição da receita: ", descricaoReceita)
+    entrada("Digite o valor da receita: ", valorReceita)
+    receita = Transacao(descricaoReceita, valorReceita)
+    adicionarItem(listaTransacoes, receita)
+    imprime("Receita registada com sucesso!")
+
+# Função para calcular o saldo atual
+funcao CalcularSaldo()
+    saldo = 0
+    para cada transacao em listaTransacoes:
+        saldo = saldo + transacao.valor
+    retorne saldo
+
+# Função para mostrar o registo de transações
+funcao MostrarRegisto()
+    imprime("Registo de Transações:")
+    para cada transacao em listaTransacoes:
+        imprime("{transacao.descricao}: {transacao.valor}€")
+
+# ======= PROGRAM EXECUTION =======  
+
+enquanto verdadeiro:
+    imprime("====== Registo de Finanças Pessoais ======")
+    imprime("[1] Registar Despesa")
+    imprime("[2] Registar Receita")
+    imprime("[3] Ver Registo")
+    imprime("[4] Ver Saldo")
+    imprime("[0] Sair")
+    
+    entrada("Escolha uma opção: ", opcao)
+
+    se opcao == 1:
+        RegistarDespesa()
+    senao, se opcao == 2:
+        RegistarReceita()
+    senao, se opcao == 3:
+        MostrarRegisto()
+    senao, se opcao == 4:
+        saldoAtual = CalcularSaldo()
+        imprime("Saldo Atual: {saldoAtual}€")
+    senao, se opcao == 0:
+        break
+    senao:
+        imprime("Opção inválida. Tente novamente.")
+

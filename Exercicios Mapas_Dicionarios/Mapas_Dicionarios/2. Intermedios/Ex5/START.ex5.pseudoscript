@@ -1,0 +1,58 @@
+/*  ================== ENUNCIADO ======================================================================== 
+
+5. Tradutor Simples: Criar um dicionário com algumas palavras em um idioma e suas
+traduções. O utilizador deve fornecer uma palavra e o programa deve traduzi-la. 
+Nota: O aluno deve criar um dicionário de traduções e solicitar a palavra ao 
+utilizador. */
+
+
+/* ================== NOTAS (opcional) ==================================================================*/
+
+
+
+
+
+
+/* ================== RESOLUÇÃO I ======================================================================== */
+
+
+/* ======= SETUP SECTION =======  */
+
+
+
+/* 1. Declarar um dicionário com algumas palavras numa lingua e suas traduções 
+noutra lingua */
+
+PortuguesFrances = ('Noite'->'Nuit', 'Gaveta'->'Tirroir', 'Peixe'->'Poisson', 'Veneno'->'Poison', 'Almofada'->'Coussin', 'Faca'->'Couteau', 'Ovo'->'Oeuf')
+
+
+
+
+
+
+/* 2. Funcao que recebe imput do utilizador relativo à palavra que quer traduzir e imprime a tradução. */
+
+funcao ObterTraducao()
+    entrada("Digite aqui a sua opção: ", opcao)
+    se opcao <= 0 ou opcao > 7:
+        imprime ("ERRO: O numero que digitou não é válido.")
+
+
+    imprime"A tradução da palavra que escolheu é: " + (opcao.valor)
+        
+
+
+/* ======= PROGRAM EXECUTION =======  */
+
+imprime("Bem vindo ao programa de tradução Português-Françês.")
+imprime("Escolha uma das seguintes palavras para obter a sua tradução em Françês:")
+imprime("1. Noite")
+imprime("2. Gaveta")
+imprime("3. Peixe")
+imprime("4. Veneno")
+imprime("5. Almofada")
+imprime("6. Faca")
+imprime("7. Ovo")
+
+ObterTraducao()
+

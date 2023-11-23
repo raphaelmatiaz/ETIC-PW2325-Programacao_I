@@ -1,0 +1,91 @@
+# ================== ENUNCIADO ======================================================================== 
+
+#14. Sistema de Biblioteca: Criar um sistema de biblioteca que permita ao utilizador
+#pesquisar, emprestar e devolver livros. Nota: O aluno deve criar estruturas para
+#representar os livros e o estado de empréstimo.
+
+# ======= SETUP SECTION ======= 
+
+# Modelo para representar um livro
+modelo Livro:
+    construtor(titulo, autor, disponivel):
+        Livro.titulo = titulo
+        Livro.autor = autor
+        Livro.disponivel = disponivel
+
+# Lista para armazenar os livros na biblioteca
+listaLivros = []
+
+# Função para adicionar livros à biblioteca
+funcao AdicionarLivro(titulo, autor)
+    livro = Livro(titulo, autor, verdadeiro)  # Um livro é inicialmente marcado como disponível
+    adicionarItem(listaLivros, livro)
+    imprime("Livro adicionado à biblioteca com sucesso!")
+
+# Função para pesquisar livros na biblioteca
+funcao PesquisarLivros()
+    entrada("Digite o título do livro a pesquisar: ", termoPesquisa)
+    encontrados = 0
+    para cada livro em listaLivros:
+        se termoPesquisa em livro.titulo ou termoPesquisa em livro.autor:
+            imprime("Livro encontrado: {livro.titulo}, {livro.autor}")
+            se livro.disponivel:
+                imprime("Disponível para empréstimo.")
+            senao:
+                imprime("Indisponível (emprestado).")
+            encontrados = encontrados + 1
+    se encontrados == 0:
+        imprime("Nenhum livro encontrado com o termo de pesquisa.")
+
+# Função para realizar o empréstimo de um livro
+funcao EmprestarLivro()
+    entrada("Digite o título do livro a emprestar: ", tituloEmprestimo)
+    encontrado = falso
+    para cada livro em listaLivros:
+        se tituloEmprestimo == livro.titulo e livro.disponivel:
+            livro.disponivel = falso
+            imprime("Livro emprestado com sucesso!")
+            encontrado = verdadeiro
+            pausa
+    se nao encontrado:
+        imprime("Livro não encontrado ou não disponível para empréstimo.")
+
+# Função para realizar a devolução de um livro
+funcao DevolverLivro()
+    entrada("Digite o título do livro a devolver: ", tituloDevolucao)
+    encontrado = falso
+    para cada livro em listaLivros:
+        se tituloDevolucao == livro.titulo e not livro.disponivel:
+            livro.disponivel = verdadeiro
+            imprime("Livro devolvido com sucesso!")
+            encontrado = verdadeiro
+            pausa
+    se nao encontrado:
+        imprime("Livro não encontrado ou já disponível na biblioteca.")
+
+# ======= PROGRAM EXECUTION =======  
+
+enquanto verdadeiro:
+    imprime("====== Sistema de Biblioteca ======")
+    imprime("[1] Adicionar Livro")
+    imprime("[2] Pesquisar Livros")
+    imprime("[3] Emprestar Livro")
+    imprime("[4] Devolver Livro")
+    imprime("[0] Sair")
+    
+    entrada("Escolha uma opção: ", opcao)
+
+    se opcao == 1:
+        entrada("Digite o título do livro: ", tituloNovoLivro)
+        entrada("Digite o autor do livro: ", autorNovoLivro)
+        AdicionarLivro(tituloNovoLivro, autorNovoLivro)
+    senao, se opcao == 2:
+        PesquisarLivros()
+    senao, se opcao == 3:
+        EmprestarLivro()
+    senao, se opcao == 4:
+        DevolverLivro()
+    senao, se opcao == 0:
+        break
+    senao:
+        imprime("Opção inválida. Tente novamente.")

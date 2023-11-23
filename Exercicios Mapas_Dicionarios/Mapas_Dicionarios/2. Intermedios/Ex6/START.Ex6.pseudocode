@@ -1,0 +1,153 @@
+/*  ================== ENUNCIADO ======================================================================== 
+
+6. Registo de Compras: Criar um programa que permita ao utilizador registar suas
+compras, associando produtos e preços. O programa deve calcular o total das
+compras. Nota: O aluno deve criar um loop para permitir várias entradas de compras. */
+
+
+/* ================== NOTAS (opcional) ==================================================================
+
+O que se pretende:
+Carrinho de Compras tipo da Amazon ou Steam ou Anything 
+
+E calcular o checkout */
+
+
+
+/*MapaTemplate = (''->'', ''->'', ''->'', ''->'', ''->'', ''->'', ''->'', ''->'')*/
+
+/* ================== RESOLUÇÃO I ======================================================================== */
+
+
+/* ======= SETUP SECTION =======  */
+
+
+
+/* 1. Mapa com  de produtos disponiveis com preços e mapa do registo de compras (o carrinho) */
+
+
+/* 1.1 mapa1 ---- produto + preço*/
+
+Produtos = ('Laptop'->'800€', 'Smartphone'->'400€', 'monitor'->'200€', 'Ps5'->'600€', 'Headphones'->'100€' 'Smartwatch'->'200€', 'Desktop Gaming PC'->'1700€', 'Disco Externo'->'90€', 'GoPro Camera'->'350€')
+
+
+
+
+
+
+/* 1.2 mapa2 ---- produto + quantidade*/
+
+Carrinho = ()
+
+
+
+
+/* 2. Variaveis envolvidas em certas funcoes, mas que decidi não detalhar*/
+
+/*stock = ???
+emStock = verdadeiro/falso???*/
+
+
+
+/* 3. Menu Principal do Programa*/
+
+/* 3.1. Funcao do Menu "fora do program", ou seja, isto visa representar uma forma de o utilizador estar fora do programa e querer reabrir o programa caso o tenha fechado. (como se tivesse saido do site/ fexado uma app / fexado um programa e estivesse no desktop sem nada aberto etc)*/
+
+funcao ToggleMenu()
+    enquanto verdadeiro
+        enquanto MenuDeOpcoes = falso:
+            entrada("Digite "0" para abrir Menu", opcao)
+                se opcao == 0
+                    MenuDeOpcoes()
+                    ToggleMenu = falso
+                senao:
+                    se opcao != 0:
+                        imprime("ERRO: Só pode digitar "0" para abrir o Menu.")
+
+
+
+
+
+
+
+/* 3.2. Funcao do Menu principal. 3 Opções: Sair, Fazer compras, ou ver o carrinho. É um "lobby", um sítio que nos leva para outros sítios do programa*/
+
+
+funcao MenuDeOpcoes()
+    imprime("Bem vindo!")
+    enquanto verdadeiro:
+        entrada("Escolha uma opção: 0. Sair     1. Comprar     2. Carrinho")
+            se opcao == 0:
+                MenuDeOpcoes = falso
+                ToggleMenu()
+            senao:
+                se opcao >= 1 && se opcao <= 2
+                    se opcao == 1
+                        funcao MenuComprar()
+                        MenuDeOpcoes = falso
+                    se opcao == 2
+                        funcao VerCarrinho()
+                        MenuDeOpcoes = falso
+                    senao:
+                        imprime ("ERRO: O número que digitou não é válido. Por favor escolha uma opção válida.")
+
+
+/* 4. Menu para fazer as compras. O user recebe informacao sobre produtos disponiveis e os seus preços, e pode adiciona-los ao carrinho, escolhendo
+quantidades, até decidir voltar ao menu principal. ("Nota: O aluno deve criar um loop para permitir várias entradas de compras.")*/
+
+funcao MenuComprar(mapa)                                                                    
+    imprime("Produtos Disponiveis: ")          
+    para cada chave em mapa:
+        imprime (chave + " = " + mapa['chave'])
+    
+    enquanto MenuComprar = verdadeiro:
+        entrada("Escreva o nome do produto que deseja adicionar ao carrinho. Senão, digite "0" para regressar ao menu principal ou digite "3" para ver o seu carrinho: ", escolha)
+        se escolha == 0:
+            MenuComprar = falso                
+            MenuDeOpcoes()
+        se escolha == 3:
+            MenuComprar = falso
+            verCarrinho()
+        senao:
+            entrada("Escolha a quantidade", quantidade)
+            se (escolha != null && emStock = verdadeiro) && (quantidade != null && quantidade <= stock):
+                Carrinho[escolha] = quantidade
+            senao:
+                se (escolha != null && quantidade != null && quantidade <= stock) && emStock = falso:
+                    imprime("Este produto está fora de Stock.")
+            senao:
+                se (escolha != null && emStock = verdadeiro) && (quantidade != null && quantidade > stock):
+                    Carrinho[escolha] = stock
+                    imprime("A quantidade que selecionou é superior à disponibilidade em stock deste produto. No entanto, adicionou a quantidade máxima disponivel em stock para este produto, ao seu carrinho")
+                        
+                
+
+
+
+
+
+/* 5. Funcao/Menu que permite ao User de ver o seu carrinho de compras: informações sobre os produtos no carrinho, e respetivas quantidades, preços e preço total*/
+
+funcao verCarrinho(mapa1, mapa2)
+    para cada chave em mapa2:
+        total = mapa1.valor * mapa2.valor
+        para cada chave em mapa2:
+        imprime("O seu Carrinho:")
+        imprime((chave) + " x " (valor) + " ------- " + "€" + (mapa2.valor * mapa1.valor))
+        imprime("Total" + " ------- "  + " €" + total)
+        
+        
+
+/* 6. Funcao para calcular o total dos conteudos do carrinho do User em € (acabei por juntar esta funcao à funcao "verCarrinho"*/
+/*
+funcao totalCarrinho(mapa1, mapa2)
+    para cada chave em mapa2:
+        total = mapa1.valor * mapa2.valor
+        imprime("Total: " + " €" + total)
+
+*/
+
+
+/* ======= PROGRAM EXECUTION =======  */
+
+MenuDeOpcoes(Produtos, Carrinho)

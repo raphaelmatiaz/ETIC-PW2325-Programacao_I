@@ -1,0 +1,84 @@
+/*  ================== ENUNCIADO ======================================================================== 
+
+2. Contagem de Letras: Criar um programa que conte a frequência de letras em uma frase fornecida pelo 
+utilizador. Nota: O utilizador deve fazer a inserção da frase. */
+
+
+/* ================== NOTAS (opcional) ==================================================================
+
+NOTA: Frequencia das letras --> Quantas vezes as letras de uma frase aparecem nessa mesma frase:
+
+        Exemplo:
+
+            Frase: Abri a Janela.
+
+
+            Frequencia das letras da frase:
+
+            A: 4
+            B: 1
+            R: 1
+            I: 1
+            J: 1
+            N: 1
+            E: 1
+            L: 1
+*/
+
+/* ================== RESOLUÇÃO I ======================================================================== */
+
+
+/* ======= SETUP SECTION =======  */
+
+
+
+/* 1. Definir um Dicionário/Mapa vasio, para acolher os 
+futuros dados ('chave' -> 'valor')*/
+
+FrequenciaDasLetras = ()
+
+
+
+
+
+
+/* 2. Funcao que solicita e recebe imput da parte do 
+utilizador, sob forma de uma frase */
+
+funcao UserImput(frase)
+    entrada("Por favor, escreva uma frase: ", frase)
+
+
+
+
+
+
+/* 3. Iterar pelas letras da lista e update o dicionario em funcao das situações: se já houve occorencia da letra, 
+adicionamos 1 ao valor da chave, já existente. Se ainda não apareceu a letra, criamos uma nova chave com o nome da letra em questão, 
+e atribuimos o valor de 1 a essa chave (para definir "esta letra apareceu uma vez")*/        
+
+funcao LetrasParaDicionario(frase, dicionario)
+    para cada letra em frase:
+        se letra está em dicionario:
+            dicionario[letra] = dicionario[letra] +1
+        senao:
+            dicionario[letra] = 1
+    retorne dicionario
+        
+
+
+
+
+
+/* ======= PROGRAM EXECUTION =======  */
+
+imprime ("Bem vindo. Neste programa, vamos determinar a frequência de letras numa frase à sua escolha.")
+
+UserImput()
+
+LetrasParaDicionario(frase, FrequenciaDasLetras)
+
+imprime ("Aqui está o número de occorências de cada letra contida na sua frase:" + (FrequenciaDasLetras))
+
+
+

@@ -1,0 +1,169 @@
+/*  ================== ENUNCIADO ======================================================================== 
+
+7. Agenda de Compromissos: Criar um programa que permita ao utilizador agendar
+compromissos e a sua ordem. O programa deve mostrar os compromissos ordenados */
+
+
+/* ================== NOTAS (opcional) ==================================================================
+
+
+
+
+/* ================== RESOLUÇÃO I ======================================================================== */
+
+
+/* ======= SETUP SECTION =======  */
+
+
+
+/* 1. Mapa que serve de receptaculo para compromissos */
+
+Compromissos = ()
+
+ArrayDeCompromissos = []
+
+/*funcoes envolvidas na funcao "EDITAR COMPROMISSO*/
+
+funcao AlterarCompromisso(mapa, chave, valor)
+    mapa[chave] = valor
+    entrada("Editar: ", novoValor)
+    mapa[chave] = novoValor
+    imprimir("Alterado com sucesso")
+    ordenarParesPorChaveCrescente()
+    EditarCompromisso()
+
+funcao AlterarHorario(mapa, chave, valor)
+    mapa[valor] = chave
+    entrada("Editar: ", novoValor)
+    mapa[valor] = novoValor
+    imprimir("Alterado com sucesso")
+    ordenarParesPorChaveCrescente()
+    EditarCompromisso()
+
+funcao AlterarAmbos(mapa, chave, valor)
+    entrada("Editar Texto: ", novoCompromisso)
+        entrada("Editar Horário: ", novoHorario)
+    mapa[chave] = novoCompromisso
+    mapa[valor] = novoHorario
+    ordenarParesPorChaveCrescente()
+    EditarCompromisso()
+
+funcao EliminarCompromisso(mapa, chave,valor)
+    mapa[chave] = null 
+    retorne mapa
+    ordenarParesPorChaveCrescente()
+    EditarCompromisso()
+
+
+/* Funcao para Agendar Compromissos*/
+
+funcao AgendarCompromisso(mapa)
+    entrada ("Insira Compromisso: ", compromisso)
+        entrada("Insira um Horário: ", horario)
+        mapa[horario] = compromisso
+        ordenarParesPorChaveCrescente()
+
+/* Funcao para Editar Compromissos*/
+
+funcao EditarCompromisso(mapa, array)
+    iteracoes = 0
+    para cada chave em mapa:
+        iteracoes = iteracoes +1
+    retorne iteracoes
+    se iteracoes = 0:
+        imprime("Ainda não tem compromissos agendados.")
+        imprime("No Menu principal escolha a opcao "Agendar Compromisso"")
+    senao:
+        imprime("Compromissos Agendados:")
+        imprime("")                                               /* os imprime vazios é para dar um espaço ao texto*/
+        para cada chave em mapa:
+            imprime((valor) + " ----- " + (chave))
+    imprime("")
+    imprime("")
+    imprime("Editar Compromissos")
+    imprime("")
+    enquanto verdadeiro:
+        entrada ("Para editar um compromisso, simplesmente digite o seu horário: ", opcao)
+            se opcao == chave
+                imprime("Escolheu o compromisso: " + chave.valor + "com horário: " + chave)
+                imprime("Escolha a alteracao a fazer, ou digite "0" para sair")
+                entrada("0. SAIR     1. ALTERAR COMPROMISSO    2.ALTERAR HORARIO    3. ALTERAR AMBOS     4. ELIMINAR  ", opcao)
+                    se opcao == 0
+                        EditarCompromisso = falso
+                        MenuDeOpcoes()
+                    se opcao == 1
+                        EditarCompromisso = falso
+                        AlterarCompromisso() /*aaaaaa*/
+                    se opcao == 2
+                        EditarCompromisso = falso
+                        AlterarHorario()
+                    se opcao == 3
+                        EditarCompromisso = falso
+                        AlterarAmbos()
+                    se opcao == 4
+                        EditarCompromisso = falso
+                        EliminarCompromisso()
+
+/*Funcao feita 100% pelo GPT, não consigo criar isto por mim mesmo (por enquanto). 
+Isto é suposto ordenar por ordem crescente os pares chave-valor de um mapa*/
+
+funcao ordenarParesPorChaveCrescente(pares):
+    n = tamanho de pares
+
+    #Implemente um algoritmo de ordenação, como o Bubble Sort, por exemplo
+    para i de 0 até n - 1:
+        para j de 0 até n - i - 1:
+            # Compare as chaves dos pares
+            se pares[j][0] > pares[j + 1][0]:
+                # Troque os pares de posição se estiverem fora de ordem
+                pares[j], pares[j + 1] = pares[j + 1], pares[j]
+
+
+/* 3. Menu Principal do Programa*/
+
+/* 3.1. Funcao do Menu "fora do program", ou seja, isto visa representar uma forma de o utilizador estar fora do programa e querer reabrir o programa caso o tenha fechado. (como se tivesse saido do site/ fexado uma app / fexado um programa e estivesse no desktop sem nada aberto etc)*/
+
+funcao ToggleMenu()
+    enquanto verdadeiro
+        enquanto MenuDeOpcoes = falso:
+            entrada("Digite "0" para abrir Menu", opcao)
+                se opcao == 0
+                    MenuDeOpcoes()
+                    ToggleMenu = falso
+                senao:
+                    se opcao != 0:
+                        imprime("ERRO: Só pode digitar "0" para abrir o Menu.")
+
+
+
+
+
+
+
+/* 3.2. Funcao do Menu principal. 3 Opções: Sair, Agendar ou Remover compromisso.*/
+
+
+funcao MenuDeOpcoes()
+    imprime("Bem vindo!")
+    enquanto verdadeiro:
+        entrada("Escolha uma opção: 0. Sair     1. Agendar Compromisso     2. Editar Compromisso")
+            se opcao == 0:
+                MenuDeOpcoes = falso
+                ToggleMenu()
+            senao:
+                se opcao >= 1 && se opcao <= 2:
+                    se opcao == 1:
+                        AgendarCompromisso()
+                        MenuDeOpcoes = falso
+                    se opcao == 2
+                        EditarCompromisso()
+                        MenuDeOpcoes = falso
+                    senao:
+                        imprime ("ERRO: O número que digitou não é válido. Por favor escolha uma opção válida.")
+
+
+
+/* ======= PROGRAM EXECUTION =======  */
+
+MenuDeOpcoes()
+

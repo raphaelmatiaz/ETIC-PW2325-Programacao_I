@@ -1,0 +1,51 @@
+# ================== ENUNCIADO ======================================================================== 
+
+# 8. Calculadora de Idade: Criar um programa que calcule a idade de várias pessoas com
+# base no seu ano de nascimento. Nota: O aluno deve solicitar o ano de nascimento ao
+# utilizador.
+
+# ======= SETUP SECTION ======= 
+
+# Função para calcular a idade com base no ano de nascimento
+funcao CalcularIdade(anoNascimento)
+    # Obter o ano atual (pode variar dependendo da implementação)
+    anoAtual = ObterAnoAtual()
+
+    # Calcular a idade
+    idade = anoAtual - anoNascimento
+
+    # Retornar a idade calculada
+    retorne idade
+
+# Mensagem de boas-vindas
+imprime("Bem-vindo à Calculadora de Idade!")
+
+# Inicializar uma lista para armazenar anos de nascimento
+anosNascimento = []
+
+# ======= PROGRAM EXECUTION =======  
+
+# Loop para solicitar anos de nascimento
+enquanto verdadeiro:
+    entrada("Digite o ano de nascimento (ou 'sair' para encerrar): ", entradaAno)
+    
+    # Verificar se o usuário deseja sair
+    se entradaAno == "sair":
+        quebrar  # Sair do loop
+    
+    # Converter a entrada para inteiro (assumindo que o usuário insere um ano válido)
+    anoNascimento = converterParaInteiro(entradaAno)
+    
+    # Adicionar o ano de nascimento à lista
+    adicionarItem(anosNascimento, anoNascimento)
+
+# Calcular e imprimir a idade para cada ano de nascimento
+para cada ano em anosNascimento:
+    idadeCalculada = CalcularIdade(ano)
+    imprime("Para o ano de nascimento " + {ano} + ", a idade é " + {idadeCalculada} + " anos.")
+
+
+
+
+
+

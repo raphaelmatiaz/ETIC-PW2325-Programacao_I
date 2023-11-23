@@ -1,0 +1,102 @@
+/*  ================== ENUNCIADO ======================================================================== 
+
+3. Calculadora de Médias: Criar um programa que calcule a média de notas fornecidas
+pelo utilizador para vários alunos. Nota: Deve questionar o utilizador de todas as
+inserções necessárias. */
+
+
+/* ================== NOTAS (opcional) ==================================================================
+
+NOTA: Média = Soma de todos os dados / numero total desses mesmos dados
+
+        Exemplo:
+
+            Nota 1: 10 Nota2: 17 Nota3: 8 Nota4: 12 Nota5: 14
+
+            Média das Notas = 10 + 17 + 8 + 12 + 14 a dividir por.. 5 (numero total de notas)
+                                      
+                            
+                            isto é:
+
+                        61 / 5 = 12,2
+
+*/
+
+/* ================== RESOLUÇÃO I ======================================================================== */
+
+
+/* ======= SETUP SECTION =======  */
+
+
+
+/* 1. Definir um Dicionário/Mapa e um array vasios, para acolher os 
+futuros dados ('chave' -> 'valor') neste caso ('aluno'->'nota') e as notas do aluno*/
+
+DicionarioDeMedias = ()
+
+ArrayDeNotas = []
+
+
+
+
+
+
+/* 2. Funcao que solicita e recebe imput da parte do utilizador, 
+sob forma do nome do(a) aluno(a), e respetivas notas*/
+
+funcao UserImput(nome, nota, docionario)
+    imprime ("Por favor digite o nome do(a) aluno(a):")
+    entrada("Nome: ", nome)
+    se nome está em dicionario:
+        imprime ("Este nome já está registado na base de dados.")
+            imprime ("Por favor digite o primeiro e último nome do(a) aluno(a):")
+                entrada("Nome: ", nome)
+    senao:  
+        imprime ("Por favor digite, uma a uma, as notas de cada disciplina deste(a) aluno(a):")
+        para cada i de 1 a 10
+            entrada("Insira uma nota," nota)
+            ArrayDeNotas.adicionar(nota)
+        retornar ArrayDeNotas
+
+
+
+
+
+
+/* 3. Funcao que calcula a média das notas de um aluno apartir dos imputs do utilizador */
+
+funcao CalcularMedia(array)
+        somaDasNotas = 0
+        para cada elemento em array:
+            somaDasNotas = somaDasNotas + elemento
+        retornar somaDasNotas
+
+        quantidadeDeNotas = 0                         /* Pela "funcao UserImput" já sabemos que a quantidade de notas é 10, mas decidi implementar isto à mesma*/
+        para cada elemento em array:
+            quantidadeDeNotas = quantidadeDeNotas +1
+        retornar quantidadeDeNotas
+
+        mediaDasNotas = somaDasNotas / quantidadeDeNotas
+
+funcao GuardarNoDicionario(nome, numero, dicionario)
+    dicionario[nome] = numero
+    retornar dicionario
+
+
+
+
+
+
+/* ======= PROGRAM EXECUTION =======  */
+
+imprime ("Bem vindo. Neste programa, vamos calcular a média das notas de um(a) aluno(a) à sua escolha.")
+
+UserImput()
+
+CalcularMedia(ArrayDeNotas)
+
+GuardarNoDicionario(nome, mediaDasNotas, DicionarioDeMedias)
+
+imprime ("Media do(a) aluno(a) adicionada com sucesso:" + (DicionarioDeMedias))
+
+

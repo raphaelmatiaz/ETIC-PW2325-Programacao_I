@@ -1,0 +1,112 @@
+# ================== ENUNCIADO ======================================================================== 
+
+#12. Sistema de Reservas de Viagens: Criar um programa que permita ao utilizador
+#reservar voos, hotéis e alugar carros para uma viagem. Nota: O aluno deve criar
+#estruturas para representar voos, hotéis e carros e permitir que o usuário faça
+#reservas. 
+
+# ======= SETUP SECTION ======= 
+
+# Modelo para representar voos
+modelo Voo:
+    construtor(origem, destino, data, preco):
+        Voo.origem = origem
+        Voo.destino = destino
+        Voo.data = data
+        Voo.preco = preco
+        Voo.reservado = falso  # Inicialmente, o voo não está reservado
+
+# Modelo para representar hotéis
+modelo Hotel:
+    construtor(nome, cidade, quartos_disponiveis, preco_por_noite):
+        Hotel.nome = nome
+        Hotel.cidade = cidade
+        Hotel.quartos_disponiveis = quartos_disponiveis
+        Hotel.preco_por_noite = preco_por_noite
+        Hotel.reservado = falso  # Inicialmente, o hotel não está reservado
+
+# Modelo para representar carros para alugar
+modelo Carro:
+    construtor(modelo, ano, disponivel, preco_por_dia):
+        Carro.modelo = modelo
+        Carro.ano = ano
+        Carro.disponivel = disponivel
+        Carro.preco_por_dia = preco_por_dia
+        Carro.reservado = falso  # Inicialmente, o carro não está reservado
+
+# Listas para armazenar instâncias de voos, hotéis e carros
+listaVoos = []
+listaHoteis = []
+listaCarros = []
+
+# Função para listar voos disponíveis
+funcao ListarVoosDisponiveis()
+    imprime("Voos Disponíveis:")
+    para cada voo em listaVoos:
+        se nao voo.reservado:
+            imprime("{voo.origem} para {voo.destino} em {voo.data} - Preço: {voo.preco}€")
+
+# Função para listar hotéis disponíveis
+funcao ListarHoteisDisponiveis()
+    imprime("Hotéis Disponíveis:")
+    para cada hotel em listaHoteis:
+        se nao hotel.reservado:
+            imprime("{hotel.nome} em {hotel.cidade} - Quartos Disponíveis: {hotel.quartos_disponiveis} - Preço por Noite: {hotel.preco_por_noite}€")
+
+# Função para listar carros disponíveis
+funcao ListarCarrosDisponiveis()
+    imprime("Carros Disponíveis:")
+    para cada carro em listaCarros:
+        se nao carro.reservado:
+            imprime("{carro.modelo} ({carro.ano}) - Preço por Dia: {carro.preco_por_dia}€")
+
+# Função para reservar um voo
+funcao ReservarVoo()
+    ListarVoosDisponiveis()
+    entrada("Escolha o número do voo desejado: ", escolhaVoo)
+    se escolhaVoo >= 0 e escolhaVoo < tamanho(listaVoos):
+        vooEscolhido = listaVoos[escolhaVoo]
+        se nao vooEscolhido.reservado:
+            vooEscolhido.reservado = verdadeiro
+            imprime("Reserva do voo realizada com sucesso!")
+        senao:
+            imprime("ERRO: Este voo já está reservado.")
+    senao:
+        imprime("ERRO: Escolha inválida.")
+
+# Função para reservar um hotel
+funcao ReservarHotel()
+    ListarHoteisDisponiveis()
+    entrada("Escolha o número do hotel desejado: ", escolhaHotel)
+    se escolhaHotel >= 0 e escolhaHotel < tamanho(listaHoteis):
+        hotelEscolhido = listaHoteis[escolhaHotel]
+        se nao hotelEscolhido.reservado:
+            hotelEscolhido.reservado = verdadeiro
+            imprime("Reserva do hotel realizada com sucesso!")
+        senao:
+            imprime("ERRO: Este hotel já está reservado.")
+    senao:
+        imprime("ERRO: Escolha inválida.")
+
+# Função para reservar um carro
+funcao ReservarCarro()
+    ListarCarrosDisponiveis()
+    entrada("Escolha o número do carro desejado: ", escolhaCarro)
+    se escolhaCarro >= 0 e escolhaCarro < tamanho(listaCarros):
+        carroEscolhido = listaCarros[escolhaCarro]
+        se nao carroEscolhido.reservado:
+            carroEscolhido.reservado = verdadeiro
+            imprime("Reserva do carro realizada com sucesso!")
+        senao:
+            imprime("ERRO: Este carro já está reservado.")
+    senao:
+        imprime("ERRO: Escolha inválida.")
+
+# ======= PROGRAM EXECUTION =======  
+
+# Adicionar alguns dados iniciais às listas (voos, hotéis, carros) para teste
+adicionarItem(listaVoos, Voo("Lisboa", "Paris", "2023-05-15", 150))
+adicionarItem(listaVoos, Voo("Lisboa", "Nova Iorque", "2023-06-10", 500))
+adicionarItem(listaVoos, Voo("Lisboa", "Tóquio", "2023-07-20", 800))
+
+adicionarItem(listaHoteis, Hotel("Hotel A", "Paris",

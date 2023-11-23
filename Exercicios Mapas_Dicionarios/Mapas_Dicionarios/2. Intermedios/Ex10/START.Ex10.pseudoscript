@@ -1,0 +1,64 @@
+/*  ================== ENUNCIADO ======================================================================== 
+
+10. Dicionário de Sinónimos: Criar um programa que forneça sinónimos para palavras
+fornecidas pelo utilizador. Nota: O aluno deve criar um dicionário de sinónimos.
+
+/* ================== NOTAS (opcional) ==================================================================
+
+
+
+
+/* ================== RESOLUÇÃO I ======================================================================== */
+
+
+/* ======= SETUP SECTION =======  */
+
+/*1. Definir um mapa contendo chaves e valores, neste caso palavras e respetivos sinínimos. 
+O valor da chave (os sinonimos) estão contidos sob forma de lista*/
+
+Sinonimos = (
+    'feliz'-> ['alegre', 'contente', 'satisfeito'],
+    'triste'-> ['melancólico', 'deprimido', 'abatido'],
+    'rápido'-> ['veloz', 'ligeiro', 'apressado'],
+    'bom'-> ['excelente', 'ótimo', 'superior'])
+
+/*2. Funcao para solicitar os sinonimos dentro do dicionário de sinonimos que temos */
+
+funcao ObterSinonimos()
+    enquanto verdadeiro:
+        entrada("Digite uma palavra para obter sinónimos, ou digite "0" para regressar ao Menu ", palavra)
+            se palavra == 0
+                ObterSinonimos = falso
+                Menu()
+            senao:
+                se palavra está em Sinonimos:
+                    imprime("Aqui tem alguns sinónimos de " + palavra + ":")
+                    para cada valor em palavra:
+                        imprime("- ", valor)
+                senao:
+                    imprime("A palavra", palavra, "não está no dicionário de sinónimos.")
+
+/* Menu Principal. 0 = sair da APP 1 = Usar a APP*/
+
+funcao Menu()
+    enquanto verdadeiro:
+        entrada("Escolha uma opcao:     0. SAIR        1. CONSULTAR DICIONARIO DE SINÓNIMOS")
+            se opcao != 0 && se opcao != 1:
+                imprime("ERRO: Escolha uma opcao válida.")
+            senao:
+                se opcao == 0:
+                    Menu = falso
+                senao:
+                    se opcao == 1:
+                        Menu = falso
+                        ObterSinonimos()
+
+
+
+
+
+/* ======= PROGRAM EXECUTION =======  */
+
+imprime("Bem vindo ao dicionário de sinónimos.")
+
+Menu()

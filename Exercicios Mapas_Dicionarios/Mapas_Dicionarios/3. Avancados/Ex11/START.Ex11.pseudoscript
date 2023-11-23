@@ -1,0 +1,163 @@
+/*  ================== ENUNCIADO ======================================================================== 
+
+11. Gestão de Projetos: Criar um programa que permita ao utilizador gerir projetos. Cada
+projeto deve ter um nome, uma descrição e uma lista de tarefas. */
+
+/* ================== NOTAS (opcional) ==================================================================
+
+
+Nome do Projeto == Chave
+
+valor da chave == um array no qual index 0 = descrição, e index 1 é igual a um array de tarefas
+
+
+
+Estrutura de Dados:
+
+
+"Layer 1"
+
+
+    MAPA 1
+Chave - valor
+
+
+Chave = Nome do projeto
+
+Valor = outro Mapa (MAPA 2)
+
+
+"Layer 2"
+
+    MAPA 2
+Chave - Valor
+
+Chave = descrição do projeto
+valor = lista de tarefas (array)
+
+
+
+Mapa 2 e Mapa 3
+
+Mapa 2 = (chave(1,2,3,4) - valor(descricao))
+Mapa 3 = chave(1,2,3,4) - valor(lista de tarefas)
+
+
+
+1º TENTATIVA de Fazer uma estrutura de dados
+
+MapaDeProjetos = ('cozinhar -> MapaQueContemDescricoesETArefas[1]', 'Almoçar -> MapaQueContemDescricoesETArefas')
+
+
+MapaQueContemDescricoesETArefas = (MapaQueContemDescricoes[1] -> MapaQueContemOArrayDeTarefas[1], MapaQueContemDescricoes[2] -> MapaQueContemOArrayDeTarefas[2])
+
+MapaQueContemDescricoes = (1 -> Receita do franco na Pucara, 2 -> Receita da Pizza 4 Queijos, 3 -> Receita do Polvo com molho bechamel, 4 -> Receita dos joelhos de porco com leite Nesquick)
+
+MapaQueContemOArrayDeTarefas = ('1 -> ['ir às compras', 'lavar as mãos', 'descascar vegetais', 'aquecer água', 'cortar carne', 'preaquecer forno']', '2 -> ['cenas', 'coisas', 'afins'])
+
+2º TENTATIVA
+
+/* ================== RESOLUÇÃO I ======================================================================== */
+
+
+/* ======= SETUP SECTION =======  */
+
+
+/* Mapa vasio, para conter dados sobre projetos*/
+
+
+
+
+
+MapaDeProjetos = (
+    'cozinhar' -> '('Descrição: Preparar um prato' -> '['Ir às compras', 'Lavar as mãos', 'Preparar Ingredientes', 'Préaquecer Forno']')'
+)
+
+
+
+
+
+
+funcao NovoProjeto()
+    imprime("------------ MENU NOVO PROJETO -------------")
+    imprime("")
+    imprime("0. Sair ----- 1. Novo Projeto")
+    enquanto verdadeiro:
+        entrada("Escolha uma opção: ", opcao)
+            se opcao != 0 && != 1:
+                imprime("ERRO: Escolha uma opção válida")
+            se opcao == 0:
+                NovoProjeto = falso
+                Menu()
+            senao:
+                se opcao == 1:
+                    imprime("Para criar um novo projeto siga as seguintes etapas:")
+                    imprime("1. Digite um nome para o seu projeto.")
+                    imprime("2. Escreva uma Descrição para o seu projeto.")
+                    imprime("3. Atribue uma lista de tarefas, uma a uma, ao seu projeto.")
+                    enquanto verdadeiro:
+                        entrada("Nome: ", nome)
+                                
+                                imprime("Nome guardado com sucesso!")
+                                entrada("Descrição: ", descricao)
+                                        imprime("Descrição guardada com sucesso!")
+                                        funcao ListadeTarefas(array)
+                                            enquanto verdadeiro:
+                                                entrada ("Nova tarefa (ou "0" para sair)", opcao)
+                                                se opcao == 0:
+                                                    ListadeTarefas = falso
+                                                    NovoProjeto()
+                                                se opcao != 0:
+                                                    array.adicionar(tarefa)
+                                    
+
+
+
+
+
+    
+
+funcao EditarProjeto()
+    imprime("------------ MENU EDITAR PROJETO -------------")
+        imprime("")
+        imprime("0. Sair ----- 1. Editar Projeto")
+        enquanto verdadeiro:
+            entrada("Escolha uma opção: ", opcao)
+                se opcao != 0 && != 1:
+                    imprime("ERRO: Escolha uma opção válida")
+                se opcao == 0:
+                    EditarProjeto = falso
+                    Menu()
+                senao:
+                    se opcao == 1:
+
+
+/*--------------------------------*/
+
+funcao Menu()
+    enquanto verdadeiro:
+        entrada("Escolha uma opcao: ----- 0. SAIR ----- 1. NOVO PROJETO ----- 2. EDITAR PROJETO -----")
+            se opcao != 0 && se opcao != 1 && se opcao != 2:
+                imprime("ERRO: Escolha uma opcao válida.")
+            senao:
+                se opcao == 0:
+                    Menu = falso
+                se opcao == 1:
+                    Menu = falso
+                    NovoProjeto()
+                se opcao == 2: 
+                    Menu = falso
+                    EditarProjeto()
+                    
+
+
+
+
+
+
+
+
+
+/* ======= PROGRAM EXECUTION =======  */
+
+imprime("Bem vindo.")

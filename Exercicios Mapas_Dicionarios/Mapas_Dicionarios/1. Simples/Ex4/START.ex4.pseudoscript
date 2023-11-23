@@ -1,0 +1,110 @@
+/*  ================== ENUNCIADO ======================================================================== 
+
+4. Gestão de Stock: Criar um programa que faça a gestão de stock de produtos. O
+utilizador deve ser capaz de adicionar e remover produtos ao stock. Nota: O aluno
+deve criar opções para adicionar e remover produtos. */
+
+
+/* ================== NOTAS (opcional) ==================================================================*/
+
+
+
+
+
+
+/* ================== RESOLUÇÃO I ======================================================================== */
+
+
+/* ======= SETUP SECTION =======  */
+
+
+
+/* 1. Definir um mapa para acolher os dados relativos ao stock de produtos. ('chave'->'valor') neste caso 
+('Produto'->'Quantidade') */
+
+StockDeProdutos = ()
+
+
+
+/* 2. Funcao que solicita e recebe dados da parte do utilizador sob forma de um nome de produto e a sua respetiva quantiade*/
+
+funcao UserImput()
+    entrada ("Insira o nome do produto: ", produto)
+    entrada ("Insira uma quantidade: ," quantidade)
+
+
+
+/* 3. Funcao que adiciona um ou mais produtos ao stock*/
+
+funcao AdicionarProduto(mapa, chave, valor, quantidade)
+    mapa['chave'] = valor
+    se valor = null:
+        valor = 0
+    mapa['chave'] = valor + quantiade
+    ForaDeStock = falso
+    retorne mapa
+
+        
+        
+/* 4. Funcao que remove um ou mais produtos do stock*/
+        
+funcao RemoverProduto(mapa, chave, valor, quantidade)
+    mapa['chave'] = valor 
+    mapa['chave'] = valor - quantidade
+    se valor <= 0
+        ForaDeStock = verdadeiro
+        enquanto ForaDeStock = verdadeiro:
+            valor = null
+    retorne mapa
+
+
+
+
+
+/* 4. Funcao para dar opção de reabrir o Menu principal caso o utilizador tenha optado por dar exit */
+
+funcao ToggleMenu()
+    enquanto verdadeiro
+        enquanto Menu = falso:
+            entrada("Digite "0" para abrir Menu", opcao)
+                se opcao == 0
+                    Menu()
+                    ToggleMenu = falso
+
+
+
+
+
+
+
+/* 5. Menu de opções para adicionar e remover produtos*/
+
+
+funcao Menu()
+    enquanto verdadeiro:
+        entrada("Escolha uma opção: 0. Sair 1. Adicionar Produto 2. Remover Produto ", opcao): 
+            se opcao == 0
+                Menu = falso
+                ToggleMenu()
+            se opcao == 1:
+                UserImput(nome, numero)
+                AdicionarProduto(mapa, nome, quantiade)
+            se opcao == 2:
+                UserImput(nome, numero)
+                RemoverProduto(mapa, nome, quantidade)
+
+
+
+
+
+
+
+
+/* ======= PROGRAM EXECUTION =======  */
+
+imprime ("Bem vindo ao programa de gestão de stock.")
+
+Menu()
+
+
+

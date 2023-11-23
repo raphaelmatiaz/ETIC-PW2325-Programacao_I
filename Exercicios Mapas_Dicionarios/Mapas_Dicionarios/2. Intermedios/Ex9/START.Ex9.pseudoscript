@@ -1,0 +1,66 @@
+# ================== ENUNCIADO ======================================================================== 
+
+# 9. Ranking de Pontuações: Criar um programa que permita ao utilizador inserir nomes e
+# pontuações de jogadores e, em seguida, mostrar um ranking dos jogadores com as
+# melhores pontuações.
+
+
+# ======= SETUP SECTION ======= 
+
+# Definir um modelo para armazenar dados do jogador
+modelo Jogador:
+    construtor(nome, pontuacao):
+        Jogador.nome = nome
+        Jogador.pontuacao = pontuacao
+
+# Inicializar uma lista para armazenar objetos Jogador
+listaJogadores = []
+
+# Função para adicionar um jogador à lista
+funcao AdicionarJogador()
+    entrada("Digite o nome do jogador: ", nomeJogador)
+    entrada("Digite a pontuação do jogador: ", pontuacaoJogador)
+
+    # Criar um objeto Jogador com os dados fornecidos
+    jogador = Jogador(nomeJogador, pontuacaoJogador)
+
+    # Adicionar o jogador à lista
+    adicionarItem(listaJogadores, jogador)
+    imprime("Jogador adicionado com sucesso!")
+
+# Função para mostrar o ranking dos jogadores
+funcao MostrarRanking()
+    # Classificar a lista de jogadores com base nas pontuações (do maior para o menor)
+    listaJogadores = ordenarLista(listaJogadores, por=lambda jogador: jogador.pontuacao, reverso=verdadeiro)
+
+    # Imprimir o ranking
+    imprime("Ranking dos Jogadores:")
+    para cada indice, jogador em enumerar(listaJogadores, 1):
+        imprime({indice}. {jogador.nome} - Pontuação: {jogador.pontuacao})
+
+# ======= PROGRAM EXECUTION =======  
+
+# Mensagem de boas-vindas
+imprime("Bem-vindo ao Ranking de Pontuações!")
+
+# Loop para interagir com o usuário
+enquanto verdadeiro:
+    imprime("Opções:")
+    imprime("1. Adicionar jogador")
+    imprime("2. Mostrar ranking")
+    imprime("3. Sair")
+
+    # Obter a escolha do usuário
+    entrada("Escolha uma opção: ", escolha)
+
+    # Executar a ação com base na escolha do usuário
+    se escolha == "1":
+        AdicionarJogador()
+    senao, se escolha == "2":
+        MostrarRanking()
+    senao, se escolha == "3":
+        quebrar  # Sair do loop se o usuário escolher sair
+    senao:
+        imprime("Opção inválida. Tente novamente.")
+
+

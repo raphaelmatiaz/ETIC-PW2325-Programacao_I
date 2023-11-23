@@ -1,0 +1,138 @@
+/*
+1. Agenda de Contatos: Deve criar um programa que permita ao utilizador adicionar
+nomes e números de telefone a uma agenda de contactos. Nota: Deve criar um menu
+para adicionar contatos.
+*/
+
+# ----------- Resolução 1 --------------------------------------------------------
+
+/* 1. Declarar uma agenda de contactos com alguns contactos já registados */
+
+AgendaDeContactos = ('Joao'->'961111111', 'Maria'->'962222222')
+
+
+
+
+
+/* 2. funcao que recebe dois imputs (nome e numero/chave e valor), e verifica 
+se o numero está já registado no telefone. */
+
+funcao UserImput(nome, numero)
+    enquanto novoContactoValido = false
+    entrada ("Adicionar nome do contacto") -> nome
+        entrada ("Adicionar número de telefone") -> numero
+            se numero não estiver em AgendaDeContactos:
+                novoContactoValido = true
+            senao:
+                imprime ("O numero (numero) já está presente na sua lista de contactos. Não pode ter o mesmo numero duas vezes na lista)
+
+
+
+
+
+/* 3. Funcao para adicionar um contacto à lista de contactos */
+
+funcao AdicionarContacto(nome, numero)
+
+    AgendaDeContactos = AgendaDeContactos
+        AgendaDeContactos.[nome] = numero
+    retorne AgendaDeContactos
+    imprime ("Adicionou:" + (nome) + "com contacto telefónico" + (numero) à sua lista de contactos.)
+
+
+
+
+
+/* 4. Funcao para Remover um contacto à lista de contactos */
+
+funcao RemoverContacto(nome,numero)
+
+    AgendaDeContactos = AgendaDeContactos
+    AgendaDeContactos = AgendaDeContactos - AgendaDeContactos['nome'->'numero']
+    imprime ("Removeu:" + (nome) + "com contacto telefónico" + (numero) à sua lista de contactos.)
+
+
+
+
+
+
+
+
+
+
+
+
+/* 5. Funcao para ter opção de Abrir o Menu principal caso o utilizador o tenha dado exit */
+
+funcao ToggleMenu()
+    enquanto verdadeiro
+        enquanto Menu = falso:
+            entrada("Digite "0" para abrir Menu", opcao)
+                se opcao == 0
+                    Menu()
+                    ToggleMenu = falso
+
+
+
+
+
+
+
+/* 6. Menu para adicionar contactos (entre outras opções). Funciona com um loop que 
+está sempre à espera de imput do utilizador.*/
+
+
+funcao Menu()
+    enquanto verdadeiro:
+        entrada("Escolha uma opção(digite o numero correspondente", opcao): "0. Sair 1. Adicionar Contacto" 2. Exibir Contactos 3. Remover Contacto)
+            se opcao == 0
+                Menu = falso
+                ToggleMenu()
+            se opcao == 1:
+                UserImput(nome, numero)
+                AdicionarContacto(nome,numero)
+                novoContactoAdicionado(nome, numero)
+            se opcao == 2:
+                imprime (AgendaDeContactos)
+            se opcao == 3:
+                UserImput
+                RemoverContacto()
+
+
+
+
+
+
+/* 7. Correr o programa*/
+
+Menu()
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+NOTAS:
+
+dict = ()
+
+
+
+x = []
+
+dict i = imprime
+cada i em (1...10)
+
+
+
+Comando "print" dentro de um loop infinito, imprime a cena em questão infinitamente
+
+*/
