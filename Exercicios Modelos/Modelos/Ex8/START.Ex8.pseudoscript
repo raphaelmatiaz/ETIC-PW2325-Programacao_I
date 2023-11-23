@@ -1,0 +1,140 @@
+/*====================== ENUNCIADO =========================*/
+/*8. Simple Quiz Game: Crie um jogo de quiz com perguntas de múltipla escolha. O programa
+deve rastrear a pontuação do jogador e fornecer feedback sobre as respostas corretas ou
+incorretas.*/
+
+
+/*=================== NOTAS (opcional) =====================*/
+
+
+/*==========================================================*/
+
+/* - SETUP SECTION - */
+
+
+/* ... */
+
+modelo Fiz_O_Exercicio_Todo_E_Esqueci-Me_De_Usar_Modelos:
+    construtor(PorIssoMetoAquiUnsAtributosParaFazerDeConta, EAquiMetoOutroAtributiAssimFicamDois)
+        Fiz_O_Exercicio_Todo_E_Esqueci-Me_De_Usar_Modelos.PorIssoMetoAquiUnsAtributosParaFazerDeConta = atributo1
+        Fiz_O_Exercicio_Todo_E_Esqueci-Me_De_Usar_Modelos.EAquiMetoOutroAtributiAssimFicamDois = atributo2
+
+
+
+/* 3 vidas */
+
+vidas = 3
+
+
+/* Certo ou Errado */
+
+funcao Correto()
+    imprime("                                        ")
+    imprime("          - CORRETO! -                  ")
+    imprime("                                        ")
+
+funcao Errado()
+    imprime("                                        ")
+    imprime("           - ERRADO! -                  ")
+    imprime("                                        ")
+    vidas = vidas -1
+    se vidas = 0
+        imprime("                                        ")
+        imprime("             - PERDESTE! -              ")
+        imprime("                                        ")
+
+
+
+/* Simple Quizz Game */
+
+funcao Jogo()
+    imprime("================ CLOWN QUIZ ================")
+    imprime("")
+    imprime("Vidas = " + vidas)
+    imprime("                                            ")
+    imprime("               - PERGUNTA I -               ")
+    imprime("                                            ")
+    imprime("             Voçê está vivo?                ")
+    imprime("         [A] SIM          [B]NÃO            ")
+    imprime("                                            ")
+    entrada("A sua resposta: ", opcao)
+    se opcao != A && != B:
+        imprime("ERRO: Escolha uma opcao válida")
+    se opcao == A:
+        Correto()
+    se opcao == B:
+        Errado()
+    imprime("")
+    imprime("Vidas = " + vidas)
+    imprime("                                            ")
+    imprime("              - PERGUNTA II -               ")
+    imprime("                                            ")
+    imprime("          No alfabeto, que letra            ")
+    imprime("             fica antes do B?               ")
+    imprime("            [A] B       [B] A               ")
+    imprime("                                            ")
+    entrada("A sua resposta: ", opcao)
+    se opcao != A && != B:
+        imprime("ERRO: Escolha uma opcao válida")
+    se opcao == A:
+        Errado()
+    se opcao == B:
+        Correto()
+    imprime("")
+    imprime("Vidas = " + vidas)
+    imprime("                                            ")
+    imprime("             - PERGUNTA III -               ")
+    imprime("                                            ")
+    imprime("  Os dentes são brancos. O arroz é branco   ")
+    imprime("   Podemos dizer que os dentes são arroz?   ")
+    imprime("           [A] Sim       [B] Não            ")
+    imprime("                                            ")
+    entrada("A sua resposta: ", opcao)
+    se opcao != A && != B:
+        imprime("ERRO: Escolha uma opcao válida")
+    se opcao == A:
+        Errado()
+    se opcao == B:
+        Correto()
+    imprime("")
+    imprime("Vidas = " + vidas)
+    imprime("                                            ")
+    imprime("             - PERGUNTA IV -                ")
+    imprime("                                            ")
+    imprime("             Quato dá 2 x 1?                ")
+    imprime("           [A] 2       [B] 1                ")
+    imprime("                                            ")
+    entrada("A sua resposta: ", opcao)
+    se opcao != A && != B:
+        imprime("ERRO: Escolha uma opcao válida")
+    se opcao == A:
+        Correto()
+    se opcao == B:
+        Errado()
+    imprime("")
+    imprime("Vidas = " + vidas)
+    imprime("                                            ")
+    imprime("             - PERGUNTA V -                 ")
+    imprime("                                            ")
+    imprime("       Qual é a mão que não é oposta        ")
+    imprime("        àquela que não é a direita?         ")
+    imprime(" [A] A mão direita       [B] A mão esquerda ")
+    imprime("                                            ")
+    entrada("A sua resposta: ", opcao)
+    se opcao != A && != B:
+        imprime("ERRO: Escolha uma opcao válida")
+    se opcao == A:
+        Errado()
+    se opcao == B:
+        Correto()
+    se vidas > 0:
+        imprime("                                        ")
+        imprime("             - GANHÁSTE! -              ")
+        imprime("                                        ")
+        
+
+
+
+/* - PROGRAM EXECUTION - */
+
+Jogo()

@@ -1,0 +1,336 @@
+# ====================== ENUNCIADO ============================================================
+
+#10. Booking System: Crie uma aplicação de reservas que permita aos usuários agendar
+#compromissos ou reservar quartos de hotel. O programa deve gerenciar datas e horários
+#disponíveis.
+
+# =============================================================================================
+#=================== NOTAS (opcional) =========================================================
+
+#Enunciado mais claro
+#10. Booking System: Crie uma aplicação de reservas que permita aos usuários (do hotel) de agendar compromissos relativos à reserva do quarto. 
+#Oou reservar quartos de hotel. O programa deve gerenciar datas e horários
+#disponíveis.
+
+# Compromisso é a reserva de quarto do ponto de vista do hotel.  
+# Agendar Compromissos + Reservar Quartos de Hotel??   
+# Agendar Compromissos ou Reservar Quartos de Hotel??  
+# gerenciar datas e horários Does compromissos + Quartos de Hotel?
+
+#funcoes main menu:
+
+
+#Do ponto de vista Cliente:
+#- Alugar Quarto para duração X até Y
+
+#Do ponto de Vista Hotel:
+#- Agendar Compromissos relativos a preparação do quarto e horarios de execução das tarefas ligadas aos mesmos- 
+
+# =============================================================================================
+# ---------------------- SETUP ----------------------------------------------------------------
+
+# BASE DE DADOS
+
+modelo User:
+    construtor(nome, nomeDeFamilia, idade, email, telemovel, NovoUser)
+        User.nome = nome 
+        User.nomeDeFamilia = nomeDeFamilia
+        User.idade = idade
+        User.email = email
+        User.password = password
+        User.telemovel = telemovel
+        User.NovoUser = verdadeiro
+        User.Logged = falso
+        User.AccountExists = falso
+
+modelo DonosDoHotel:
+    construtor(UserName, Password)
+        DonosDoHotel.ID = "Hotel"
+        DonosDoHotel.Password = "1234"
+        DonosDoHotel.InfoQuartos = (
+            
+            'Quarto 1'->
+
+            '[(
+            
+            'Disponivel'->'verdadeiro',
+            'Datas ocupadas'->'[dia_X, dia_Y, dia_Z]',
+            'Horarios disponíveis'->'('Das X'->'às y')',
+            'Compromissos'->'('Horário n'->'Tarefa i')'
+            
+            )]',
+            
+            'Quarto 2'->
+
+            '[(
+            
+            'Disponivel'->'falso',
+            'Datas ocupadas'->'[dia_X, dia_Y, dia_Z]',
+            'Horarios disponíveis'->'('Das X'->'às y')',
+            'Compromissos'->'('Horário n'->'Tarefa i')'
+            
+            )]',
+            
+            'Quarto 3'->
+
+            '[(
+            
+            'Disponivel'->'falso',
+            'Datas ocupadas'->'[dia_X, dia_Y, dia_Z]',
+            'Horarios disponíveis'->'('Das X'->'às y')',
+            'Compromissos'->'('Horário n'->'Tarefa i')'
+            
+            )]',
+            
+            'Quarto 4'->
+
+            '[(
+            
+            'Disponivel'->'verdadeiro',
+            'Datas ocupadas'->'[dia_X, dia_Y, dia_Z]',
+            'Horarios disponíveis'->'('Das X'->'às y')',
+            'Compromissos'->'('Horário n'->'Tarefa i')'
+            
+            # para cada quarto ainda podiamos adicionar uma lista de caracteristicas do quarto de hotel, tipo: tem Jacuzzi, tem duas camas individuais, tem 1 cama casal, tem vista sobre mar, etc etc etc...
+
+            )]',
+
+           
+            
+            )
+
+
+
+
+
+# MENU LAUNCH APP
+
+funcao MenuDaAPP()
+    imprime("================================================================")
+    imprime("                           APP HOTEL                            ")
+    imprime("================================================================")
+    imprime("                   Que tipo de utilizador é?                    ")
+    imprime("                                                                ")
+    imprime("           [A] Cliente             [B] Empregado do Hotel       ")
+    imprime("----------------------------------------------------------------")
+    imprime("                                                                ")
+    UserChoosing = verdadeiro
+    enquanto UserChoosing:
+        entrada("Escolha uma opção: " opcao)
+
+        se opcao == "A":
+            se User.AccountExists = falso:
+                register()
+                UserChoosing = falso
+            
+            se User.AccountExists = verdadeiro:
+                Clientelogin()
+                UserChoosing = falso
+
+        se opcao == "B":
+            HotelLogin()
+            UserChoosing = falso
+        
+        senao:
+            imprime("ERRO: Digite uma opção válida.")
+            
+
+
+# USER REGISTER 
+
+funcao register()
+    imprime("================================================================")
+    imprime("                           REGISTER                             ")
+    imprime("================================================================")
+    imprime("    Parece que ainda não está registado na nossa plataforma.    ")
+    imprime("       Registe-se para beneficiar dos nossos serviços.          ")
+    imprime("----------------------------------------------------------------")
+    imprime("                                                                ")
+    entrada("Nome:", User.nome)
+    entrada("Nome de Famíla: ", User.nomeDeFamilia)
+    entrada("Idade: ", User.idade)
+    entrada("Telemovel: ", User.telemovel)
+    imprime("                                                                ")
+    entrada("Email: ", User.email)
+    entrada("Password: ", User.password)
+    imprime("                                                                ")
+    imprime("[ENTER] Continuar                                               ")
+    entrada("", enter)
+
+
+# LOGIN CLIENTE
+
+funcao Clientelogin()
+    imprime("================================================================")
+    imprime("                            LOGIN                               ")
+    imprime("================================================================")
+    imprime("                 Entre as suas informações                      ")
+    imprime("----------------------------------------------------------------")
+    imprime("                                                                ")
+
+    UserChoosing = verdadeiro
+    enquanto UserChoosing:
+        entrada("Email: ", email)
+        entrada("Password: ", password)
+
+        se email == User.email: && password == User.password:
+            UserInterface()
+            UserChoosing = falso
+
+        senao:
+            imprime("ERRO: Login Impossível.")
+
+
+
+
+# LOGIN HOTEL
+
+funcao HotelLogin()
+    imprime("================================================================")
+    imprime("                      HOTEL LOGIN                               ")
+    imprime("================================================================")
+    imprime("                 Entre as suas informações                      ")
+    imprime("----------------------------------------------------------------")
+    imprime("                                                                ")
+    UserChoosing = verdadeiro
+    enquanto UserChoosing:
+        entrada("ID: "ID)
+        entrada("Password: " PASS)
+
+        se ID == DonosDoHotel.ID && PASS == DonosDoHotel.Password:
+            MenuGestaoHotel()
+            UserChoosing = falso
+        
+        senao:
+            imprime("ERRO: Login Impossível.")
+
+#--------------------------------------------------------------------------------------------
+
+
+# MAIN MENU DO LADO CLIENTE
+
+funcao UserInterface()
+    imprime("================================================================")
+    imprime("             BEM VINDO " + User.Nome + " " + User.nomeDeFamilia  )
+    imprime("================================================================")
+    imprime("                                                                ")
+    imprime("         [A] RESERVAR QUARTO                                    ")
+    imprime("                                                                ")
+    UserChoosing = verdadeiro
+    enquanto UserChoosing:
+        entrada("Escolha uma opcao: " opcao)
+
+        se opcao == "A":
+            para cada chave, valor em DonosDoHotel.InfoQuartos:
+                para cada valor em chave:
+                    se chave "verdadeiro" estiver em valor "Disponivel":
+                        imprime("Quartos disponiveis:")
+                        imprime("chave")
+                        UserChoosing = falso
+            
+            UserChoosing2 = verdadeiro
+            enquanto UserChoosing:
+                entrada("Escolha uma opcao: " opcao)
+
+                se opcao == Quarto 1
+                    imprime("INFO QUARTO 1")
+                    UserChoosing2 = falso
+                        para cada chave, valor em Chave[Quarto1]:
+                            imprime [chave] + " - " + [valor]
+
+
+                    UserChoosing3 = verdadeiro
+                    enquanto UserChoosing3:
+                         entrada("Escolha data de inicio de ocupação: " data1)
+                         entrada("Escolha data de inicio de ocupação: " data2)
+                         
+                         #quarto fica reservado de dia X a dia Y. Fica indisponivel nesses dias
+                         #quarto aparece na base de dados na parte Backoffice para que os empregados possam marcar tarefas ligadas à preparação do quarto antes das datas escolhidas pelo cliente
+
+
+                    
+
+                se opcao == Quarto 2
+                    imprime("INFO QUARTO 2")
+                    UserChoosing2 = falso
+                        para cada chave, valor em Chave[Quarto1]:
+                            imprime [chave] + " - " + [valor]
+
+
+                    UserChoosing3 = verdadeiro
+                    enquanto UserChoosing3:
+                         entrada("Escolha data de inicio de ocupação: " data1)
+                         entrada("Escolha data de inicio de ocupação: " data2)
+                         
+                         #quarto fica reservado de dia X a dia Y. Fica indisponivel nesses dias
+                         #quarto aparece na base de dados na parte Backoffice para que os empregados possam marcar tarefas ligadas à preparação do quarto antes das datas escolhidas pelo cliente
+
+                se opcao == Quarto 3
+                    imprime("INFO QUARTO 3")
+                    UserChoosing2 = falso
+                        para cada chave, valor em Chave[Quarto1]:
+                            imprime [chave] + " - " + [valor]
+
+
+                    UserChoosing3 = verdadeiro
+                    enquanto UserChoosing3:
+                         entrada("Escolha data de inicio de ocupação: " data1)
+                         entrada("Escolha data de inicio de ocupação: " data2)
+                         
+                         #quarto fica reservado de dia X a dia Y. Fica indisponivel nesses dias
+                         #quarto aparece na base de dados na parte Backoffice para que os empregados possam marcar tarefas ligadas à preparação do quarto antes das datas escolhidas pelo cliente
+
+                se opcao == Quarto 4
+                    imprime("INFO QUARTO 4")
+                    UserChoosing2 = falso
+                        para cada chave, valor em Chave[Quarto1]:
+                            imprime [chave] + " - " + [valor]
+
+
+                    UserChoosing3 = verdadeiro
+                    enquanto UserChoosing3:
+                         entrada("Escolha data de inicio de ocupação: " data1)
+                         entrada("Escolha data de inicio de ocupação: " data2)
+                         
+                         #quarto fica reservado de dia X a dia Y. Fica indisponivel nesses dias
+                         #quarto aparece na base de dados na parte Backoffice para que os empregados possam marcar tarefas ligadas à preparação do quarto antes das datas escolhidas pelo cliente
+
+                senao:
+                    imprime("ERRO: Escolha uma opcao válida.")
+
+
+        senao:
+            imprime("ERRO: Escolha uma opcao válida.")
+
+
+# MAIN MENU DO LADO HOTEL
+
+funcao HotelInterface()
+    imprime("================================================================")
+    imprime("                          BEM VINDO                             ")
+    imprime("================================================================")
+    imprime("                                                                ")
+    imprime("         [A] Definir Tarefas para preparar quartos              ")
+    imprime("                                                                ")
+
+    #fritei aqui, mas vou tentar esplicar o que faria nesta parte:
+
+    # while loop para que o Operador/Funcionario deste hotel escolha uma opcao neste menu ( só ha uma por enquanto [A])
+
+    # Listar quartos etiquetados como "reservados" (Disponivel = falso) na base de dados
+
+    # while loop para selecionar qualquer quarto listado desta forma
+
+    # Menu para adicionar tarefas e horarios de preparação do quarto em questão, e guardar essas informações num mapa dentro da base de dados do Quarto em questão
+
+    # Handle inputs inválidos e dar opção para voltar a trás ou voltar ao menu principal em qualquer destes while loops
+
+
+
+
+funcao programa()
+    MenuDaAPP()
+
+# ---------------------- EXECUTION ---------------------------------------------------------------- 
+
+programa()

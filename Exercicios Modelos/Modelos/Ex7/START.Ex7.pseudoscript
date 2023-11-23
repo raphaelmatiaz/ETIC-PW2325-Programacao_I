@@ -1,0 +1,72 @@
+/*====================== ENUNCIADO =========================*/
+/*7. Currency Converter: Desenvolva um conversor de moeda que permita ao usuário converter
+entre diferentes moedas, fornecendo taxas de câmbio atualizadas.*/
+
+
+/*=================== NOTAS (opcional) =====================*/
+
+
+/*==========================================================*/
+
+/* - SETUP SECTION - */
+
+modelo TaxasDeCambioUSD:
+    construtor()
+        TaxasDeCambio.USD-USD = 1 
+        TaxasDeCambio.USD-EUR 0.85
+        TaxasDeCambio:USD-JPY 112.5
+
+modelo TaxasDeCambioEUR:
+    construtor()
+        TaxasDeCambio.EUR-EUR = 1
+        TaxasDeCambio.EUR-USD = 1.18  
+        TaxasDeCambio.EUR-JPY = 131.71  
+
+modelo TaxasDeCambioJPY:
+    construtor()
+        TaxasDeCambio.JPY-JPY = 1
+        TaxasDeCambio.JPY-USD = 0.0089  
+        TaxasDeCambio.JPY-EUR = 0.0076  
+
+
+funcao Converter(valor, moeda1, moeda2)
+    se moeda1 == moeda2:
+        imprime:(moeda1 + ": " + valor + " ---> " + moeda2 + ": " + valor) 
+    se moeda1 == "EUR":
+        se moeda2 == "USD":
+            conversao = valor * TaxasDeCambio.EUR-USD
+        se moeda2 == "JPY":
+             conversao = valor * TaxasDeCambio.EUR-JPY
+    se moeda1 == "USD":
+        se moeda2 == "EUR":
+            conversao = valor *  TaxasDeCambio.USD-EUR 
+        se moeda2 == "JPY":
+            conversao = valor *  TaxasDeCambio:USD-JPY 
+    se moeda1 == "JPY":
+        se moeda2 == "EUR":
+            conversao = valor *  TaxasDeCambio.JPY-EUR   
+        se moeda2 == "USD":
+            conversao = valor *   TaxasDeCambio.JPY-USD  
+      
+     imprime(moeda1 + ": " + valor + " ---> " + moeda2 + ": " + conversao)
+
+funcao programa()
+    imprime("======================================================")
+    imprime("               CURRENCY CONVERTER                     ")
+    imprime("                                                      ")
+    imprime("                    ESCOLHA:                          ")
+    imprime("                                                      ")
+    entrada("Valor: ", valor)
+    entrada("Moeda [EUR][USD][JPY] ", moeda1)
+    entrada("Converter para [EUR][USD][JPY]: ", moeda2)
+    Converter(valor, moeda1, moeda2)
+    imprime("======================================================")
+
+
+
+
+/* - PROGRAM EXECUTION - */
+
+programa()
+
+

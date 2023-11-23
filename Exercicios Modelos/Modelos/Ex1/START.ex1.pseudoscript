@@ -1,0 +1,120 @@
+# ====================== ENUNCIADO ============================================================
+
+
+# 1. Calculator App: Crie um programa que simule uma calculadora básica, permitindo a entrada
+#de dois números e realizando operações de adição, subtração, multiplicação e divisão.
+
+
+# =============================================================================================
+
+# ---------------------- SETUP ----------------------------------------------------------------
+
+
+# BASE DE DADOS
+
+
+# Escolhas do Utilizador da Calculadora
+
+modelo ImputUtilizador
+    construtor:
+        ImputUtilizador.Numero1 = "numero 1"
+        ImputUtilizador.Numero2 = "numero 2"
+        ImputUtilizador.Operador = "operador"
+
+
+# Modelos para executar cada Cálculo
+
+modelo calculadora
+    construtor:
+        calculadora.adicao = ImputUtilizador.numero1 + ImputUtilizador.Numero2
+        calculadora.substracao = ImputUtilizador.numero1 - ImputUtilizador.Numero2
+        calculadora.divisao = ImputUtilizador.numero1 / ImputUtilizador.Numero2
+        calculadora.multiplicacao = ImputUtilizador.numero1 * ImputUtilizador.Numero2
+
+
+
+# RECEBER IMPUT DO UTILIZADOR 
+
+funcao UserInput() 
+
+    UserChoosing = verdadeiro
+
+    enquanto UserChoosing:
+        entrada("Digite um número ", numero1)
+
+        se numero1 != "":
+            imprime("Número " + "'" {numero1} + "'" + " escolhido com sucesso!")
+            ImputUtilizador.Numero1 = numero1
+            UserChoosing = falso
+
+        senao:
+            imprime("ERRO: Tente novamente.")
+
+
+
+    UserChoosing = verdadeiro
+    imprime("[+][-][/][x]")
+
+    enquanto UserChoosing:
+        entrada("Escolha um operador: ", operador)
+
+        se operador != '+' && operador != '-' && operador != '/' && operador != 'x':
+            imprime("ERRO: Escolha um operador válido")
+
+        senao:
+            imprime("Operador " + "'" {operador} + "'" + " escolhido com sucesso!")
+            ImputUtilizador.Operador = operador
+            UserChoosing = falso
+
+
+
+    UserChoosing = verdadeiro
+    enquanto UserChoosing:
+
+        entrada("Digite um segundo número ", numero2)
+
+        se numero2 != "":
+            imprime("Número " + "'" {numero2} + "'" + " escolhido com sucesso!")
+            ImputUtilizador.Numero2 = numero2
+            UserChoosing = falso
+
+        senao:
+            imprime("ERRO: Tente novamente.")
+
+
+
+# CALCULAR UMA SIMPLES OPERAÇÃO
+
+funcao Calcular()
+
+    resultado = 0
+
+    se ImputUtilizador.Operador == '+':
+        resultado = calculadora.adicao
+
+    se ImputUtilizador.Operador == '-':
+        resultado = calculadora.substracao
+
+    se ImputUtilizador.Operador == '/':
+        resultado = calculadora.divisao
+
+    se ImputUtilizador.Operador == 'x':
+        resultado = calculadora.multiplicacao
+
+    imprime("")
+    imprime("OPERAÇÃO: " + {numero1} + " " + {operador} + " " + {numero2})
+    imprime("RESULTADO: " + {resultado})
+    imprime("")
+
+
+
+
+
+# ---------------------- EXECUTION ----------------------------------------------------------------
+
+imprime("====== CALCULADORA ======")
+imprime("")
+
+UserInput()
+
+Calcular()

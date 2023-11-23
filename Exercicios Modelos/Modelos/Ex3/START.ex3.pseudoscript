@@ -1,0 +1,96 @@
+/*================================================================================*/
+/*Enunciado*/
+
+/* 3. To-Do List: Crie uma aplicação de lista de tarefas. O programa deve permitir adicionar
+tarefas, marcar tarefas como concluídas e listar as tarefas pendentes.*/
+
+/*================================================================================*/
+
+/*Setup*/
+
+modelo UserData:
+    construtor()
+        UserData.
+
+Tarefas_Descricoes = (''->'', ''->'', ''->'', ''->'', ''->'',)
+
+
+/* MODELOS */
+
+modelo ListaDeTarefas:
+    construtor(array)
+        ListaDeTarefas
+
+
+/* ADICIONAR TAREFA */
+
+funcao AdicionarTarefa()
+    imprime("                                                                                                  ")
+    imprime("                                      - ADICIONAR TAREFA -                                        ")
+    imprime("                                                                                                  ")
+    imprime("Escolha um nome para a nova tarefa")
+    enquanto verdadeiro:
+        entrada("Nome: ", nome)
+        imprime("Adicione uma descrição à sua nova tarefa.")
+        imprime("")
+        entrada("Tarefa: ", tarefa)
+        Tarefas_Descricoes[nome] = tarefa
+        imprime("")
+        imprime("Tarefa adicionada com sucesso")
+
+funcao ConcluirTarefa()
+    imprime("                                                                                                  ")
+    imprime("                                       - CONCLUIR TAREFA -                                        ")
+    imprime("                                                                                                  ")
+    imprime("Escolha uma Tarefa que concluiu")
+    imprime("")
+    QuantidadeTarefas = 0
+    para cada i de 1 a QuantidadeTarefas:
+        QuantidadeTarefas = QuantidadeTarefas +1
+        para cada chave, valor em Tarefas_Descricoes:
+            imprime("[" + i + "] " + chave, valor)
+            DicionarioDeTarefas = (''->'', ''->'', ''->'', ''->'', ''->'')
+
+funcao SelecionarTarefa()
+    imprime("")
+    enquanto verdadeiro:
+        entrada("Digite o número assiciado à tarefa")
+        
+
+
+
+
+/* MAIN MENU */
+
+funcao MainMenu()
+    imprime("                                                                                                  ")
+    imprime("                                      - LISTA DE TAREFAS -                                        ")
+    imprime("                                                                                                  ")
+    imprime("      [1]Adicionar Tarefa              [2]Concluir Tarefa              [3]Tarefas Pendentes       ")
+    imprime("                                                                                                  ")
+    enquanto verdadeiro:
+        entrada("Escolha: ", opcao)
+            se opcao != 1 && != 2 && != 3:
+                imprime("ERRO: Escolha uma opcao válida.")
+            se opcao == 1:
+                MainMenu = falso
+                AdicionarTarefa()
+            se opcao == 2:
+                MainMenu = falso
+                ConcluirTarefa()
+            se opcao == 3:
+                MainMenu = falso
+                VerTarefas()
+
+
+
+/*================================================================================*/
+
+/* Execução*/
+
+imprime("LISTA DE TAREFAS")
+imprime("")
+
+
+
+

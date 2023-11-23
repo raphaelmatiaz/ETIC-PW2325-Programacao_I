@@ -1,0 +1,82 @@
+/*====================== ENUNCIADO =========================*/
+/*4. Temperature Converter: Faça um conversor de temperatura que permita ao usuário
+converter entre Celsius e Fahrenheit. O programa deve aceitar uma entrada de temperatura e
+realizar a conversão.*/
+
+
+/*=================== NOTAS (opcional) =====================*/
+
+/*Fahrenheit = (Celsius * 9/5) + 32*/
+
+/*Celsius = (Fahrenheit - 32) * 5/9*/
+
+/*==========================================================*/
+
+/* - SETUP SECTION - */
+
+modelo Converter
+    construtor:
+        Converter.ToFahrenheit = (numero*(9/5)) + 32
+        Converter.ToCelsius = (numero -32)* (5/9)
+
+
+
+funcao Programa()
+    imprime("          - PROGRAMA DE CONVERSÃO CELCIUS-FAHRENHEIT -           ")
+    imprime("                                                                 ")
+    entrada("                      Digite um número                           ")
+    imprime("                                                                 ")
+    entrada("-> ", numero)
+    imprime("                                                                 ")
+    imprime("Escolha uma unidade de medida para o valor que acabou de digitar:")
+    imprime("                                                                 ")
+    imprime("  Nota: se escolher Celsius, irá obter a conversão para          ")
+    imprime("                 Fahrenheit, e vice versa                        ")
+    imprime("                                                                 ")
+    imprime("               [A] Celsius  [B] Fahrenheit                       ")
+    imprime("                                                                 ")
+    entrada("-> ", opcao)
+        se entrada != A && != B:
+            imprime("ERRO: Escolha uma opção válida")
+        senao:
+            se opcao == A:
+                UnidadeDeMedida = Celcius
+                Resultado = Converter.ToFahrenheit
+                imprime("                                                                 ")
+                imprime("                         - RESULTADO -                           ")
+                imprime("                                                                 ")
+                imprime("Celsius: " + numero + "°" + " ------> " + "Fahrenheit" + "°F" Resultado )
+                imprime("                                                                 ")
+            se opcao == B:
+                UnidadeDeMedida = Fahrenheit
+                Resultado = Converter.ToCelsius
+                imprime("                                                                 ")
+                imprime("                         - RESULTADO -                           ")
+                imprime("                                                                 ")
+                imprime("Fahrenheit:" + numero + "°F" + " ------> " + "Celsius: " +  Resultado )
+                imprime("                                                                 ")
+    
+    imprime("                                                                 ")
+    imprime("                   - CONVERTER OUTRO NÚMERO? -                   ")
+    imprime("                                                                 ")
+    imprime("               [A] SIM                     [B] NÃO               ")
+    imprime("                                                                 ")
+    entrada("-> ", opcao)
+        se entrada != A && != B:
+            imprime("ERRO: Escolha uma opção válida")
+        senao:
+            se opcao == A:
+                Programa = falso
+                Programa()
+            se opcao == B:
+                imprime("                                                                 ")
+                imprime("                        ATÉ À PRÓXIMA!                           ")
+                imprime("                                                                 ")
+                Programa = falso
+
+            
+/* - PROGRAM EXECUTION - */
+
+Programa()
+
+

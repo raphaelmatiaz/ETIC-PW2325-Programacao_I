@@ -1,0 +1,121 @@
+/*====================== ENUNCIADO =========================*/
+/*5. Simple Text Editor: Desenvolva um editor de texto simples que permita ao usuário criar,
+editar e salvar arquivos de texto.*/
+
+
+/*=================== NOTAS (opcional) =====================*/
+
+
+/*==========================================================*/
+
+/* - SETUP SECTION - */
+
+MapaDeTextos = ()
+
+modelo UserData
+    construtor:
+        UserData.Textos = MapaDeTextos
+
+
+
+funcao CriarTexto()
+    imprime("                                                                 ")    
+    imprime("                    - ESCREVA O SEU TEXTO -                      ")
+    imprime("                                                                 ")
+    entrada("-> ", texto)
+    imprime("                                                                 ")    
+    imprime("                      - GUARDAR O TEXTO? -                       ")
+    imprime("               [A] SIM                     [B] NÃO               ")
+    imprime("                                                                 ")
+    entrada("-> ", opcao)
+    se entrada != A && != B:
+            imprime("ERRO: Escolha uma opção válida")
+        senao:
+            se opcao == A:
+                imprime("                                                                 ")    
+                imprime("                      - ATRIBUE UM TÍTULO -                      ")
+                imprime("                        - AO SEU TEXTO -                         ")
+                imprime("                                                                 ")
+                entrada("-> ", titulo)
+                MapaDeTextos[titulo] = texto
+                imprime("                                                                 ")    
+                imprime("                    [INFO] Texto guardado                        ")
+                imprime("                                                                 ")
+                Programa()
+            se opcao == B:
+                imprime("                                                                 ")    
+                imprime("                 [INFO] Texto não guardado                       ")
+                imprime("                                                                 ")
+                Programa()
+
+funcao EditarTexto()
+    imprime("                                                                 ")    
+    imprime("                    - ESCOLHA UM TEXTO -                         ")
+    imprime("                      - PARA O EDITAR -                          ")
+    imprime("                                                                 ")
+    imprime("                                                        [X] Sair ")
+    para cada chave em MapaDeTextos:
+        imprime ("•" + chave)
+    imprime("                                                                 ")
+    entrada("Digite o nome do texto que deseja editar: ", opcao)
+    se opcao != X && != cada chave em MapaDeTextos:
+        imprime("ERRO: Escolha uma opcao válida")
+    se opcao == X:
+        EditarTexto = falso
+        Programa()
+    se opcao = chave:
+        imprime("                                                                 ")    
+        imprime(chave)
+        imprime(chave.valor)
+        entrada("Altere o seu texto: ", novotexto)
+        imprime("                                                                 ")    
+        imprime("                     - GUARDAR ALTERAÇÕES? -                     ")
+        imprime("              [A] SIM                     [B] NÃO                ")
+        imprime("                                                                 ")
+        entrada("-> ", opcao)
+        se entrada != A && != B:
+                imprime("ERRO: Escolha uma opção válida")
+            senao:
+                se opcao == A:
+                    MapaDeTextos[Chave] = novotexto
+                    imprime("                                                                 ")    
+                    imprime("                    [INFO] Texto guardado                        ")
+                    imprime("                                                                 ")
+                    Programa()
+                    EditarTexto = falso
+                    Programa()
+                se opcao == B:
+                    imprime("                                                                 ")    
+                    imprime("                 [INFO] Texto não guardado                       ")
+                    imprime("                                                                 ")
+                    EditarTexto = falso
+                    Programa()
+    
+
+
+funcao Programa()
+    imprime("                  - PROGRAMA EDITOR DE TEXTO -                   ")
+    imprime("                                                                 ")
+    imprime("                                                                 ")
+    imprime("                      Escolha uma opção:                         ")
+    imprime("                                                                 ")
+    imprime("          [A] Criar Texto   [B] Editar Texto   [X] SAIR          ")
+    imprime("                                                                 ")
+    entrada("-> ", opcao)
+        se entrada != A && != B && != X:
+            imprime("ERRO: Escolha uma opção válida")
+        se opcao == X:
+            imprime("                                                                 ")
+            imprime("                        ATÉ À PRÓXIMA!                           ")
+            imprime("                                                                 ")
+            Programa = falso
+        senao:
+            se opcao == A:
+                CriarTexto() 
+            se opcao == B:
+                EditarTexto()
+              
+
+/* - PROGRAM EXECUTION - */
+
+Programa()

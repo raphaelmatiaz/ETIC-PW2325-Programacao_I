@@ -1,0 +1,54 @@
+# ====================== ENUNCIADO ============================================================
+
+
+#2. Guess the Number: Desenvolva um jogo em que o computador escolhe um número
+# aleatório e o jogador tenta adivinhar qual é. O programa deve fornecer dicas para indicar se o
+# palpite está muito alto ou muito baixo.
+
+
+# =============================================================================================
+
+# ---------------------- SETUP ----------------------------------------------------------------
+
+
+
+funcao Jogo()
+    tentativas = 0
+    NumeroAleatorio = aleatorio()
+    imprime("Já está! Escolhi um número aleatório! Tente adivinhar!")
+    enquanto verdadeiro:
+        entrada("Tente Adivinhar: ", adivinha)
+        se adivinha > NumeroAleatorio:
+            imprime("O número escolhido é maior que" adivinha + "!")
+            tentativas = tentativas +1
+        se adivinha < NumeroAleatorio:
+            imprime("O número escolhido é menor que" adivinha + "!")
+            tentativas = tentativas +1
+        se adivinha == NumeroAleatorio:
+            imprime("Parabéns! Você adivinhou o número secreto!")
+            imprime("Número de Tentativas: " tentativas)
+            imprime("")
+            imprime("- NOVO JOGO? -")
+            imprime("[1]SIM  [2]NÃO")
+            imprime("")
+            entrada("A sua escolha: ", opcao)
+                se opcao == 1:
+                    Jogo = falso
+                    IniciarJogo()
+                senao:
+                    imprime("Bom jogo! Até breve!")
+
+funcao IniciarJogo()
+    entrada("[ENTER] Iniciar Jogo", ENTER)
+        se ENTER = null
+        Jogo()
+
+
+
+# ---------------------- EXECUTION ----------------------------------------------------------------
+
+imprime(" - JOGO DO NÚMERO ALEATÓRIO -")
+imprime("")
+imprime("Objetivo do jogo:")
+imprime("- Vou escolher um número ao aleatório, e voçê terá de o adivinhar.")
+

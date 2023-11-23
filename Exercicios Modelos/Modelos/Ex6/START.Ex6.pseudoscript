@@ -1,0 +1,61 @@
+/*====================== ENUNCIADO =========================*/
+/*6. BMI Calculator: Crie um programa que calcule o índice de massa corporal (BMI) com base
+no peso e na altura do usuário. O programa deve indicar em qual faixa de BMI o usuário se
+encontra.*/
+
+
+/*=================== NOTAS (opcional) =====================*/
+
+/* BMI = Body Mass Index*/
+
+/*BMI = weight (kg) / (height (m))^2
+
+*/
+
+/*==========================================================*/
+
+/* - SETUP SECTION - */
+
+modelo Pessoa:
+    construtor(nome, altura, peso, BMI)
+        Pessoa.Nome = nome
+        Pessoa.altura = altura
+        Pessoa.peso = peso
+        Pessoa.BMI = BMI
+
+modelo FaixaBMI
+    construtor
+        FaixaBMI.Underweigt = Pessoa.BMI < 18.5
+        FaixaBMI.NormalWeight = Pessoa.BMI >= 18.5 && <= 24.9
+        FaixaBMI.Overweight = Pessoa.BMI >= 25 && <= 29.9
+        FaixaBMI.Obese = Pessoa.BMI >= 30
+
+
+funcao CalcularBMI(peso, altura)
+    Resultado = peso / (altura*altura)
+    imprime("O seu BMI é: " + Resultado)
+    se FaixaBMI.Underweigt:
+        imprime("O seu peso está demasiado baixo.")
+    FaixaBMI.NormalWeight:
+        imprime("O seu peso está óptio.")
+    FaixaBMI.Overweight:
+        imprime("O seu peso demasiado alto.")
+    FaixaBMI.Obese:
+        imprime("Voçê é obeso.")
+
+
+
+funcao programa()
+    imprime("===============")
+    imprime("BMI Calculator")
+    imprime("              ")
+    entrada("Nome: ", nome)
+    entrada("Peso: ", peso)
+    entrada("Altura: ", altura)
+    pessoa = nome(altura, peso, resultado)
+    CalcularBMI(peso, altura)
+    imprime("===============")
+
+/* - PROGRAM EXECUTION - */
+
+programa()

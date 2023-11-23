@@ -1,0 +1,97 @@
+/*====================== ENUNCIADO =========================*/
+/*9. Inventory Management: Desenvolva um sistema simples de gestão de inventário para
+adicionar, remover e listar itens em um inventário fictício.*/
+
+
+/*=================== NOTAS (opcional) =====================*/
+
+Items = ()
+
+modelo InformacoesSobreInventario:
+    construtor()
+        InformacoesSobreInventario.Inventario = Items
+
+        InformacoesSobreInventario.Listar = ListarInventario()
+        InformacoesSobreInventario.Adicionar = AdicionarItem()
+        InformacoesSobreInventario.Remover = RemoverItem()
+
+
+
+
+/*---------------------- FUNCOES ------------------------------*/
+
+funcao RemoverItems()
+funcao AdicionarItems()
+    imprime("================================================================")
+    imprime("                         REMOVER ITEMS                          ")
+    imprime("================================================================")
+    enquanto verdadeiro:
+        entrada("Nome do Item que deseja remover: ", nome)
+            se nome != qualquer chave em Items
+        entrada("Quantidade de Items que deseja remover: ", quantidade)
+        Items[nome] = valor - quantidade
+        RemoverItems = falso
+        MainMenu()
+
+
+funcao AdicionarItems()
+    imprime("================================================================")
+    imprime("                       ADICIONAR ITEMS                          ")
+    imprime("================================================================")
+    enquanto verdadeiro:
+        entrada("Nome do Item: ", nome)
+        entrada("Quantidade de Items: ", quantidade)
+        Items[nome] = quantidade
+        AdicionarItems = falso
+        MainMenu()
+
+
+funcao ListarInventario(Items)
+    imprime("================================================================")
+    imprime("                          INVENTÁRIO                            ")
+    imprime("================================================================")
+    para cada chave, valor em Items:
+        imprime("◆ " + chave + " ---► " + valor)
+        entrada("[X] Sair: ", sair)
+        se sair == X:
+            MainMenu()
+        senao:
+            imprime("ERRO: Digite "X" para sair")
+            
+
+funcao MainMenu()
+    imprime("================================================================")
+    imprime("                           GESTOR DE                        [X] ")
+    imprime("                           INVENTÁRIO                           ")    
+    imprime("================================================================")
+    imprime("                                                                ")
+    imprime("                                                                ")
+    imprime("    [A] Listar Inventário                                       ")
+    imprime("    [B] Adicionar Items                                         ")
+    imprime("    [C] Remover Item                                            ")
+    imprime("                                                                ")
+    enquanto verdadeiro:
+        entrada("-> ", opcao)
+        se opcao != A && != B && != C && != X:
+            imprime("ERRO: Escolha uma opção válida")
+        senao:
+            se opcao == A:
+                ListarInventario()
+                MainMenu = falso
+            se opcao == B:
+                ListarInventario()
+                AdicionarItems()
+                MainMenu = falso
+            se opcao == C:
+                ListarInventario()
+                RemoverItems()
+                MainMenu = falso
+
+
+
+funcao programa()
+    MainMenu()
+
+/* Execução*/
+
+programa()
