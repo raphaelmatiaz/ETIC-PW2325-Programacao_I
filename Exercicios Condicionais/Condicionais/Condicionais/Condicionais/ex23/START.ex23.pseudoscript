@@ -1,0 +1,40 @@
+# ============== ENUNCIADO ============================================================
+
+# 23. Escreva um programa que determine se um número é um número de Fibonacci.
+
+# ============== NOTAS ============================================================
+
+# =================================================================================
+
+#--------------- Setup -----------------------------------------------
+
+# Inicializa os dois primeiros números de Fibonacci
+
+funcao DeterminarFibonacci(Numero)
+
+fibonacciAnterior = 0
+fibonacciAtual = 1
+
+enquanto fibonacciAtual <= numero:
+
+    se fibonacciAtual == numero:
+        imprime(numero + " é um número de Fibonacci.")
+        parar
+    senao:
+
+        temp = fibonacciAtual
+        fibonacciAtual = fibonacciAtual + fibonacciAnterior
+        fibonacciAnterior = temp
+
+
+imprime(numero + " não é um número de Fibonacci.")
+
+#-------------- Execution --------------------------------------------
+
+imprime("Verificador de Números de Fibonacci")
+imprime("")
+entrada("Digite um número: ", Numero)
+
+DeterminarFibonacci(Numero)
+
+

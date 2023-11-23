@@ -1,0 +1,41 @@
+
+# 28. Faça um programa que determine se um número é primo de Mersenne.
+
+# ============== NOTAS ============================================================
+
+# =================================================================================
+
+# --------------- Setup ---------------------------
+
+funcao ePrimo(numero):
+    # Função para verificar se um número é primo
+    se numero < 2:
+        retorne falso
+    para i de 2 até a raiz quadrada de numero:
+        se numero % i == 0:
+            retorne falso
+    retorne verdadeiro
+
+funcao ePrimoDeMersenne(expoente):
+    # Função para verificar se um número é um primo de Mersenne
+    se expoente <= 1:
+        retorne falso
+    numero = 2^expoente - 1
+    retorne ePrimo(expoente) && ePrimo(numero)
+
+# --------------- Execution ------------------------
+
+imprime("Verificador de Números Primos de Mersenne")
+imprime("")
+
+# Recebe o expoente do usuário
+entrada("Digite o expoente: ", expoente)
+
+# Converte a entrada para um número
+expoente = converterParaNumero(expoente)
+
+# Verifica se o número é um primo de Mersenne
+se ePrimoDeMersenne(expoente):
+    imprime("2^" + {expoente} + " - 1 é um número primo de Mersenne.")
+senao:
+    imprime("2^" + {expoente} + " - 1 não é um número primo de Mersenne.")

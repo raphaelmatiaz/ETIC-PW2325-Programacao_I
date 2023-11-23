@@ -1,0 +1,30 @@
+
+# 18. Crie um programa que determine se um número é uma potência de 2.
+
+
+#-------- Setup ---------------------------------------------------------------------------------------------------------
+
+funcao VerificarPotenciaDe2(numero):
+    verificacao = verdadeiro
+    enquanto verificacao:
+        se numero > 0 e numero % 2 == 0:
+            resultado = numero / 2
+            # Verifica se o resultado é uma potência de 2
+            se resultado != 1 e resultado % 2 == 0:
+                imprime(numero + " é uma potência de 2!")
+            senao:
+                imprime(numero + " não é uma potência de 2!")
+
+            verificacao = falso
+        senao:
+            imprime("ERRO: Por favor, insira um número positivo e par.")
+
+            entrada("Digite um número: ", numero)
+
+#-------- Execution ----------------------------------------------------------------------------------------------
+
+imprime("Bem Vindo. Neste programa vamos verificar se um número é uma potência de 2.")
+imprime("")
+entrada("Digite um número: ", numero)
+
+VerificarPotenciaDe2(numero)

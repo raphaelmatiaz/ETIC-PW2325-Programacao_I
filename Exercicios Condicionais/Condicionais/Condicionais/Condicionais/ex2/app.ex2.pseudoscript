@@ -1,0 +1,35 @@
+/*
+2. Crie um programa que verifique se um número é par ou ímpar.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+entrada ("Digite um número:", numero)
+funcao verificar():
+    se numero % 2 == 0:
+        imprime ("O número é par".)
+    senão imprime ("O número é impar.")
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+funcao ParImpar(numero):
+    se numero % 2== 0
+        retorna "O numero é par"
+    retorna "O numero é impar"
+
+entrada("Diga o seu numero", x)
+
+imprime(
+        ParImpar(x) # a funcao ParImpar(x) acontece primeiro porque está entre parenteses
+)
+
+-------- Minha segunda Resolução (voltei a fazer) ------------------------------------------------
+
+funcao revelarNumeroParOuImpar(numero)
+    se numero % 2 == 0:
+        imprime ("O número é Par")
+    senão:
+        imprime ("O número é impar")
+
+entrada ("Digite um número: ", x)
+funcao revelarNumeroParOuImpar(x)

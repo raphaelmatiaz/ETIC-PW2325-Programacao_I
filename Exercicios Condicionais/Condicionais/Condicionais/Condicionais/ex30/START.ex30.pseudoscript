@@ -1,0 +1,35 @@
+
+# 30. Crie um programa que determine se um número é primo de Fermat.
+
+# ============== NOTAS ============================================================
+
+# =================================================================================
+
+# --------------- Setup ---------------------------
+
+funcao ePotenciaDeDois(expoente):
+    # Função para verificar se um número é uma potência de dois
+    enquanto expoente % 2 == 0:
+        expoente = expoente / 2
+    retorne expoente == 1
+
+funcao ePrimoFermat(expoente):
+    # Função para verificar se um número é um primo de Fermat
+    retorne ePotenciaDeDois(expoente) && ePrimo(2^(2^expoente) + 1)
+
+# --------------- Execution ------------------------
+
+imprime("Verificador de Números Primos de Fermat")
+imprime("")
+
+# Recebe o expoente do usuário
+entrada("Digite o expoente: ", expoente)
+
+# Converte a entrada para um número
+expoente = converterParaNumero(expoente)
+
+# Verifica se o número é um primo de Fermat
+se ePrimoFermat(expoente):
+    imprime("2^(2^" + {expoente} + ") + 1 é um número primo de Fermat.")
+senao:
+    imprime("2^(2^" + {expoente} + ") + 1 não é um número primo de Fermat.")

@@ -1,0 +1,53 @@
+/* 
+5. Desenvolva um programa que calcule a média de três notas 
+ e indique se o aluno foiaprovado (média >= 7) ou reprovado.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+Quantidade.Notas = 3  
+Soma.Notas = x
+Media.Notas = y
+Aprovado = false
+
+funcao CalcularMedia():
+    entrada ("Digite o nome do aluno: ", Aluno) # indentação não necessária quando há vários imputs seguidos
+    entrada ("valor da nota 1: ", nota 1)
+    entrada ("valor de nota 2: ", nota 2)
+    entrada ("valor da nota 3: ", nota 3)
+        funcao adicionar(nota1, nota2, nota3):
+            Soma.Notas <- nota1 + nota2 + nota3 # "<-" serve para guardar um valor dentro de uma variavel
+            funcao fazerMedia(x, Soma.Notas)
+                Media.Notas <- Soma.Notas / Quantidade.Notas
+                    se Media.Notas >= 7:
+                        Aprovado = true
+                            então print ("Aluno foi aprovado.")
+                    senão:
+                        Aprovado = false 
+                            então print ("Aluno não foi aprovado.") 
+
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+lista = [nota, nota, nota] 
+
+funcao somaDasNotas(lista):
+    resultado = 0
+    cada nota em lista:  #
+        resultado = resultado + nota
+    retorna resultado
+
+funcao calculaMedia(notas)
+    soma = somaDasNotas(notas)
+    retorna soma/notas.tamanho()
+
+notas = [] # a lista começa vasia
+cada i em [1..3]: # a cada i, significa [1,2,3] primeiro o 1, depois o 2, depois o 3. O i é o valor que está na lista.
+    entrada("Coloca a {i}º nota: ", x) #iteração na qual a cada passagem ele pede um imput e adiociona à lista "notas". O x é a variavel na qual fica guardada o imput inserido pelo utilizador.
+    notas.adiciona(x)
+
+media = calculaMedia(notas)
+se meia >=7:
+    imprime("Parabens! Aprovado!")
+senao:
+    imprime("Estudasses!")

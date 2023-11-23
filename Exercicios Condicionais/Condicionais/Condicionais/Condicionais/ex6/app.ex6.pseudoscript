@@ -1,0 +1,23 @@
+/*
+6. Crie um programa que verifique se um número é múltiplo de 5.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+
+entrada("Digite um número: ", numero)
+    se numero % 5 = 0:   #verificar restos com o "modelo operador"
+        print ("O número que digitou é um multiplo de 5.)
+    senão:
+        print ("O número que digitou não é um multiplo de 5.")
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+funcao multiplode5(x): 
+    retorna x % 5 == 0
+
+entrada("Diga um numero: ", numero)
+se multiploDe5(numero):
+    imprime (" {numero} é mltiplo de 5")
+senao:
+    imprime("{numero} não é multiplo de 5")

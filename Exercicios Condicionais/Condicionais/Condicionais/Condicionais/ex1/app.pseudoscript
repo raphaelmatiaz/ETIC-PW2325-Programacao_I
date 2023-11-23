@@ -1,0 +1,37 @@
+/*
+1 Escreva um programa que determine se um número é 
+ positivo, negativo ou zero.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+entrada ("Escreva um número: ", numero)
+    se numero == 0:
+        imprime ("O número é zero")
+    se numero < 0:
+        imprime ("O número é negativo")
+    se numero > 0:
+        imprime ("O número é positivo")
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+funcao verificarNumero(numero):  "(numero)" podia ser qualquer cena "bananas" por exemplo. chamando a funcao "verificarNumero(x)" o "(numero)" em "funcao verificarNumero passa a chamar-se "x".
+    se numero == 0:
+        imprime("O número é zero.")
+    se numero > 0:
+        imprime("O numero é positivo")
+    se numero < 0:
+        imprime("O numero é negativo")
+
+
+entrada("Diga o seu numero", x")
+
+verificarNumero(x)
+
+
+
+
+
+
+
+

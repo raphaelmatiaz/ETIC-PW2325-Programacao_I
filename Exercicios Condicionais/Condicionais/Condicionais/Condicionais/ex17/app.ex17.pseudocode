@@ -1,0 +1,25 @@
+/*
+17. Desenvolva um programa que classifique uma pessoa como criança (0-12 anos),
+adolescente (13-17 anos), adulto (18-59 anos) ou idoso (60 anos ou mais).
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+funcao determinarFaixaEtaria(idade)
+    se idade >= 0 && <=12:
+        print ("Esta idade corresponde à faixa etaria de criança.")
+    senão, se idade >= 13 && <=17:
+        print ("Esta idade corresponde à faixa etaria de adolescente.")
+    senão, se idade >= 18 && <=59:
+        print ("Esta idade corresponde à faixa etaria de adulto.")
+    senão, se idade >= 60:
+        print ("Esta idade corresponde à faixa etaria de idoso.")
+        
+
+        
+
+entrada ("Insira a sua idade: ", idade)
+funcao determinarFaixaEtaria(idade)
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+

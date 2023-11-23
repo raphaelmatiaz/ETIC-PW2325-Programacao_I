@@ -1,0 +1,59 @@
+# ============== ENUNCIADO ============================================================
+
+#20. Faça um programa que verifique se uma palavra é um palíndromo.
+
+# ============== NOTAS ============================================================
+
+
+# =================================================================================
+
+#-------------------------- Resolução 1 ------------------------------
+
+#--------------- Setup -----------------------------------------------
+
+funcao DeterminarPalindromo(palavra):
+
+    se palavra == palavra(string invertida) # não há commando para inverter palavras no pseudoscript
+        imprime(inputPalavra + " é um palíndromo.")
+    senao:
+        imprime(inputPalavra + " não é um palíndromo.")
+
+#-------------- Execution --------------------------------------------
+
+
+imprime("Verificador de Palíndromo")
+imprime("")
+entrada("Digite uma palavra: ", inputPalavra)
+
+DeterminarPalindromo(inputPalavra)
+
+
+#-------------------------- Resolução 2 ------------------------------
+
+
+imprime("Verificador de Palíndromo")
+imprime("")
+entrada("Digite uma palavra: ", inputPalavra)
+
+
+# Inicializar índices para a extremidade esquerda e direita da palavra
+indiceEsquerda = 0
+indiceDireita = tamanho(palavra) - 1
+Palindromo = verdadeiro
+
+# Verifica se a palavra é um palíndromo
+enquanto indiceEsquerda < indiceDireita e Palindromo:
+    # Compara os caracteres nas posições índiceEsquerda e índiceDireita
+    se palavra[indiceEsquerda] != palavra[indiceDireita]:
+        Palindromo = falso
+    senao:
+        # Move os índices para o centro da palavra
+        indiceEsquerda = indiceEsquerda + 1
+        indiceDireita = indiceDireita - 1
+
+
+se Palindromo = verdadeiro
+    imprime(inputPalavra + " é um palíndromo.")
+senao:
+    imprime(inputPalavra + " não é um palíndromo.")
+

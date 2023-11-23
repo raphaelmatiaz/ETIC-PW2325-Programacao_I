@@ -1,0 +1,27 @@
+# ============== ENUNCIADO ============================================================
+
+# 22. Crie um programa que calcule o valor do aluguer de um carro, considerando €50,00 por dia e
+# €0,20 por quilômetro rodado.
+
+# ============== NOTAS ============================================================
+
+# =================================================================================
+
+#--------------- Setup -----------------------------------------------
+
+funcao calcularAluguer(numero1, numero2)
+    precoFinal = (numero1 * 50) + (numero2 * 0,20)
+
+print ("O custo do aluguer do seu carro é de " + {precoFinal})
+
+        
+
+
+#-------------- Execution --------------------------------------------
+
+imprime("Calculador de Custo de Aluguér")
+imprime("")
+entrada ("Insira a duracao do aluguer do carro em dias: ", duracao)
+entrada ("Insira a distancia(km) que pretende percorrer: " distancia)
+
+calcularAluguer(dutacao, distancia)

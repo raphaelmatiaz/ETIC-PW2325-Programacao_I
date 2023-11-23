@@ -1,0 +1,67 @@
+/*
+14. Crie um programa que verifique se um número é perfeito.
+*/
+
+/* Notas:
+
+Os divisores de um número natural são todos os números 
+naturais que o dividem numa divisão exata, isto é, cujo 
+resto é zero.
+
+número perfeito:
+é um número natural para o qual a soma de todos os seus 
+divisores naturais próprios (excluindo ele mesmo) é igual 
+ao próprio número.
+
+
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+#Variaveis
+
+divisor = 2
+
+
+# 1 - Receber imput e verificar se imput é válido (tem de ser um numero natural, ou seja, inteiro e não negativo)
+
+# 1.1 verificar decimais 
+
+funcao userImput():
+    entrada("Digite um número", numero)
+        funcao Verf.Decimais():
+            numero % 1 <- verf.resultado # dividir o imput number com % por 1 permite determinar se o imput number tem casas decimais, se o resultado NÂO FOR igual a zero
+                se verf.resultado != 0:
+                    então numero.decimal = true    
+                        print ("ERRO: O número contem Decimais. Digite um numero inteiro. Ex: 1, 9, 12, 45, 300, 2688...)
+                            funcao userImput():
+
+# 2 - verificar se o número é negativo
+
+        funcao Verf.negativo():
+            se numero < 0:
+                print ("ERRO: O número que digitou é negativo. Digite un número positivo. Ex: 1, 2, 3, 4, 5...")
+
+# 3 - verificar se número é perfeito (se soma dos divisores menos o número = o número)
+
+        funcao verificar.Perfeito():
+            numero % divisor <- resultado
+                se resultado = 0:
+                    adicionar divisor a Lista.Divisores
+                senão: 
+                    divisor = divisor +1
+                        se divisor <= (numero -1)
+                            funcao verificar.Perfeito():
+                        senão:
+                            funcao somar Lista.Divisores():
+                                pegar nos elementos na lista e soma-los entre eles <- resultadoSoma
+                                    se resultadoSoma == numero
+                                        print ("Este número é um número perfeito.")
+                                    senão:
+                                        print ("Este número não é um número perfeito")
+
+
+
+
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------

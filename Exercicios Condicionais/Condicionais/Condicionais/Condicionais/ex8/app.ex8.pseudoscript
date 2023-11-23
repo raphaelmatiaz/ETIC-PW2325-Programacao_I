@@ -1,0 +1,49 @@
+/*
+8. Escreva um programa que determine se um caractere é uma 
+vogal ou consoante.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+alfabeto = [a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, x, y, z, A, B, C, D, E, F, G, H, I, J, K , L, M, N, O, P, Q, R, S, T, U, V, X, Y, Z]
+
+letrasAlteradas = [Ç, â, ã, á, à, ô, õ, ó, ò, ê, é, è, Ç, Â, Ã, Á, À, Ô, Õ, Ó, Ò, Ê, É, È]
+
+vogais = [a, e, i, o, u, A, E, I, O, U]
+
+consoantes = [b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, x, y, z, B, C, D, F, G, H, J, K , L, M, N, P, Q, R, S, T, V, X, Y, Z]
+
+validImput = true
+
+
+# Receber Imput do utilizador e verificar se o imput é válido antes de avançar
+
+funcao UserImput():
+    imput ("Digite um caractere: ", caractere)
+        funcao VerificarCaractere():
+            se caractere = letrasAlteradas[Any]: # se o caractere for igual a qualquer um dos elementos da lista "letrasAlteradas"
+                validImput = false
+                    print ("A lentra que digitou tem cedilha ou um acento. Por favor digite uma letra sem estas características")
+                        funcao UserImput():
+            se caractere != alfabeto[Any]: #se o caractere não estiver presente no alfabeto portugues
+                validImput = false
+                    print ("O caractere que digitou não é uma letra ou não está presente no alfabeto português. Por favor digite uma letra presente no alfabeto português.)
+                         funcao UserImput():
+
+# verificar se o imput é vogal ou consoante
+            
+            senão:
+                se caractere = vogais[any]:  # se imput corresponder a qualquer elemento na lista "vogais"
+                    print ("O caractere que digitou é uma vogal.")
+                se caractere = consoantes[any]: # se imput corresponder a qualquer elemento na lista "consoantes"
+                    print ("O caractere que digitou é uma consoante.")
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+funcao eVogal(caractere):
+    vogais = ['a','e','i','o','u']
+
+    retorna caractere está em vogais
+
+entrada ("diga um caractere: ", x)
+    

@@ -1,0 +1,54 @@
+/*
+
+7. Faça um programa que determine se um número é primo.
+
+NOTA
+numero primo é um numero inteiro, positivo, superior a 1, que quando dividdido por outro numero que 1 ou ele proprio, o resultado terá sempre casas decimais
+
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+numero.primo = false
+numero.decimal = false
+numero.diferente != 1, numero  #diferente de 1 e de o numero escolhido pelo utilizador
+
+# verificar que é número inteiro, positivo e superior a 1
+
+funcao DigitarNumero():
+    entrada ("Digite um número: ", numero)
+        funcao Verf.Decimais():
+            numero % 1 = verf.resultado
+                se verf.resultado != 0:
+                    então numero.decimal = true    
+                        print ("ERRO: O número contem Decimais. O número digitado tem de ser inteiro, positivo e superior a 1. Ex: 2, 3, 4, 5, 6...")
+                            funcao DigitarNumero():
+                se verf.resultado = 0:
+                    se numero = 1:
+                        print ("ERRO: Inseriu o número 1. O número digitado tem de ser inteiro, positivo e superior a 1. ")
+                            funcao DigitarNumero
+                        print ("ERRO: O número que inseriu é inferior a 1. O número digitado tem de ser inteiro, positivo e superior a 1.")
+                            funcao DigitarNumero():
+
+# verificar que é numero primo (que quando dividido por outro numero que 1 ou ele proprio dá um numero com casas decimais)
+
+
+se numero % 1 = 0
+    se numero % numero = 0:
+        numero.primo = true 
+            print ("O número é primo.")
+    senão:
+        numero.primo = false    
+            print ("O número não é primo")
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+funcao numeroPrimo(x):
+
+    multiplosEncontrados
+
+
+
+
+
+

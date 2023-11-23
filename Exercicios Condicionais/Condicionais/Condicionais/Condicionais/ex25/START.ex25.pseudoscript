@@ -1,0 +1,28 @@
+# ============== ENUNCIADO ============================================================
+
+# 25. Desenvolva um programa que calcule a raiz quadrada de um número, se o número for
+# positivo.
+
+# ============== NOTAS ============================================================
+
+# =================================================================================
+
+#--------------- Setup -----------------------------------------------
+
+funcao calcularRaizQuadrada(numero):
+    se numero >= 0:
+        raizQuadrada = raizQuadrada(numero)
+        retorne raizQuadrada
+    senao:
+        retorne "Não é possível calcular a raiz quadrada de um número negativo."
+
+#-------------- Execution --------------------------------------------
+
+
+imprime("Calculadora de Raiz Quadrada")
+imprime("")
+entrada("Digite um número: ", inputNumero)
+
+resultadoRaizQuadrada = calcularRaizQuadrada(numero)
+
+imprime("Resultado da Raiz Quadrada: " + {resultadoRaizQuadrada})

@@ -1,0 +1,43 @@
+
+# 27. Escreva um programa que classifique um triângulo como retângulo, obtusângulo ou
+# acutângulo.
+
+# ============== NOTAS ============================================================
+
+# =================================================================================
+
+#--------------- Setup -----------------------------------------------
+
+funcao classificarTriangulo(angulo1, angulo2, angulo3):
+    somaAngulos = angulo1 + angulo2 + angulo3
+
+    se somaAngulos == 180:
+        # Verifica se é um triângulo retângulo
+        se angulo1 == 90 || angulo2 == 90 || angulo3 == 90:
+            imprime("O triângulo é retângulo.")
+        senao:
+            # Verifica se é um triângulo obtusângulo ou acutângulo
+            se angulo1 > 90 || angulo2 > 90 || angulo3 > 90:
+                imprime("O triângulo é obtusângulo.")
+            senao:
+                imprime("O triângulo é acutângulo.")
+    senao:
+        imprime("Os ângulos não formam um triângulo válido.")
+
+#-------------- Execution --------------------------------------------
+
+imprime("Classificador de Triângulo")
+imprime("")
+
+# Recebe os ângulos do usuário
+entrada("Digite o primeiro ângulo: ", angulo1)
+entrada("Digite o segundo ângulo: ", angulo2)
+entrada("Digite o terceiro ângulo: ", angulo3)
+
+# Converte a entrada para números
+angulo1 = converterParaNumero(angulo1)
+angulo2 = converterParaNumero(angulo2)
+angulo3 = converterParaNumero(angulo3)
+
+# Classifica o triângulo
+classificarTriangulo(angulo1, angulo2, angulo3)

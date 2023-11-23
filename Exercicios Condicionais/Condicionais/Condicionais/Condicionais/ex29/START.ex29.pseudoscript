@@ -1,0 +1,35 @@
+
+# 29. Desenvolva um programa que calcule o fatorial de um número.
+
+# ============== NOTAS ============================================================
+
+# =================================================================================
+
+# --------------- Setup ---------------------------
+
+funcao calcularFatorial(numero):
+    # Função para calcular o fatorial de um número
+    se numero < 0:
+        retorne "Erro: Não é possível calcular o fatorial de um número negativo."
+    senao se numero == 0:
+        retorne 1
+    senao:
+        resultado = 1
+        para i de 1 até numero:
+            resultado = resultado * i
+        retorne resultado
+
+# --------------- Execution ------------------------
+
+imprime("Calculadora de Fatorial")
+imprime("")
+
+# Recebe o número do usuário
+entrada("Digite um número: ", numero)
+
+# Converte a entrada para um número
+numero = converterParaNumero(numero)
+
+# Calcula e imprime o fatorial
+fatorial = calcularFatorial(numero)
+imprime("O fatorial de " + {numero} + " é: " + {fatorial})

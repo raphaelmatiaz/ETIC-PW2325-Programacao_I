@@ -1,0 +1,36 @@
+/*
+11. Escreva um programa que calcule o IMC (Índice de Massa Corporal) e classifique a situação
+do usuário (abaixo do peso, peso normal, acima do peso).
+*/
+
+/* Notas:
+
+Calcular IMC - peso da pessoa a  dividir por (altura da pessoa x altura da pessoa)
+
+IMC:
+    inferior a 18.5 = underweight
+    entre 18.5 e 24.9 = normal 
+    superior a 25 = overweight / obese
+
+
+*/
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+funcao userImput():
+    entrada("Digite o seu peso (kg): ", peso)
+    entrada("Digite a sua altura (m): ", altura)
+        altura * altura <- alturaAoQuadrado
+        peso / alturaAoQuadrado <- IMC
+        funcao RetornarResultado()
+            print ("O seu IMC (Índice de Massa Corporal) é de [IMC]")
+                se IMC < 18.5:
+                    print ("Está abaixo do peso.")
+                se IMC >= 18.5:
+                    se IMC <=24.9
+                        print ("O seu peso é normal.")
+                se IMC > 25.0 
+                    print ("Está acima do peso.")
+                    
+
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------

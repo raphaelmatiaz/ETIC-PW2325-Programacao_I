@@ -1,0 +1,38 @@
+/*
+15. Escreva um programa que determine se um ano é ou não um número primo.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+funcao verificarImput(numero)
+    se numero < 2:
+        print("O número que inseriu não é valido")
+        retorne
+
+funcao determinarAnoPrimo(numeros)
+    divisorInvalido = false
+    para cada i em lista ( de 2....até....(numero -1))
+        se numero % i == 0:
+            divisorInvalido = false 
+                Imprime ("Este ano não é um número primo.")
+                Iterromper funcao
+        senão numero % i != 0:
+            divisorInvalido = true
+                imprime ("Este ano é número primo.")
+        
+
+entrada ("Insira um ano", ano)
+funcao verificarImput
+funcao determinarAnoPrimo
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+
+
+
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+
+
+

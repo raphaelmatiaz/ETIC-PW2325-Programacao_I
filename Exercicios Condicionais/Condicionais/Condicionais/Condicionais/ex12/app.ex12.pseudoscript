@@ -1,0 +1,26 @@
+/*
+12. Faça um programa que determine se um número é divisível 
+por 3 e por 5.
+*/
+
+/* Notas:
+
+Usar "%" module operator. Verificar "left overs" de divisão
+
+
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+funcao userImput():
+    entrada("Digite um número: ", numero)
+        funcao DeterminarSeDivisivel
+            se numero % 3 = 0
+                se numero % 5 = 0
+                    print ("O número é divisível por 3 e por 5.")
+            senão:
+                print ("O número não é divisivel por 3 e por 5.")
+                    
+
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------

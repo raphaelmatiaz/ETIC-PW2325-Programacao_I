@@ -1,0 +1,365 @@
+/\*
+
+------- N O T A S ----------
+
+--- Noções -------------------------------------------
+
+---- Matemática --------------------------------------
+
+    Definições:
+
+        Número Inteiro: Um numero sem casas decimais.
+        Número Natural: Um numero Inteiro Positivo.
+
+        Número Primo: Um numero Natural, superior a 1, e divisivel por 1 e ele próprio. O único numero par que é primo é o 2.
+        Número Perfeito:
+
+    Operadores:
+
+        Operador Módulo(%): Serve para calcular os restos de uma divisão. Se, quando um número é dividido por outro, se tudo o que é dividido é distribuido igualmente e o resto é igual a zero, ou se pelo contrário resta algo que não é possivel distribuir/dividir igualmente.
+
+---- Programação --------------------------------------
+
+    Conceitos Fundamentais
+
+        Parametros em funcões:
+
+        Nomes de parametros em funções são apenas "placeholders", e os valores utilizados quando se faz call à função podem ter nomes diferentes do placeholder.
+
+            Exemplo: funcao verificarNumero(numero)
+                        se numero == 0
+                            imprime ("O número é zero.)
+                        se numero > 0
+                            imprime ("O número é positivo.)
+                        se numero < 0
+                            imprime ("O número é negativo.)
+
+                        entrada ("Digite um número: ", x)
+
+                        funcao verificarNumero(x)
+
+
+            Breakdown do Exemplo
+
+                1. Em "funcao verificarNumero(numero)", "(numero)" é um parametro. É um placeholder que serve para receber dados quando se vai call a funcao mais tarde no código. Podia chamar-se "dinossauros" ou "GarrafaDeAgua" ou "ComiUmaPizzaEnquantoFaziaOPino", não iria afetar a funcionalidade e executabilidade desta função (se depois nos "ses", em ves de "se numero" tinhamos "se dinossauros" ou "seGarrafaDeAgua"). Mas, para o código ser mais "self explanatory, e "readable" é common good practice de atribuir um placehorder name ao parametro, que seja relacionado com o tipo de dados que a funcao irá percisar para funcionar. Neste caso como estamos a comparar um futuro imput numérico para comparar com o zero(0), faz sentido ser "funcao verificarNumero(numero)" e não "funcao verificarNumero(PingoDoce) ou "funcao verificarNumero(ElonMusk).
+
+                1.1 Se fosse "funcao verificarNumero()", e não definir-mos pelo menos um parametro, as condições "se numero ---, se numero --- etc" não vão funcionar. Temos sempre de definir um ou mais parametros quando definimos uma função que REQUER DADOS EXTERNOS PARA FUNCIONAR. Também podemos ter funcões que não necessitam de paramentros para funcionar. Vai depender do objetivo da funcao:
+
+                    A. Funcao Com Parametros
+
+                        funcao calcularSoma(a, b):
+                            resultado = a + b
+                            retorne resultado
+
+                        entrada("Digite um numero: ", numero1)
+                        entrada("Digite outro numero: ", numero2)
+
+                        funcao calcularSoma(numero1, numero2)
+
+
+                    B. Funcao Sem Parametros
+
+                        funcao saudacao()
+                            imprime ("Olá, mundo!")
+
+
+        Utilização de boolean values
+
+            Na maior parte das linguagens de programação os valores "verdadeiro" e "falso" não necessitam necessáriamente de um contentor ou variavel para serem contidos. São valores que também podem ser simplesmente RETORNADOS DE UMA FUNÇÃO (return false ou return true), como resultado dessa função.
+
+            Podemos verificar se uma condição é verdadeira simplesmente ao escrever "se variavelqualquer:" seguido de instruções indentadas. Não é necessario escrever "se variavelqualquer = true:".
+
+
+        Utilização da função retorne
+
+            Podemos uzar o retorne, no final de uma funcao, sem especificar nenhum valor/resultado/informação a retornar, para terminar a funcao mais cedo quando uma certa condição acontece.
+
+                Ex:
+                    funcao verificarImput(numero):
+                        se numero < 2:
+                            imprime ("O numero nao e primo")
+                            retorne
+
+        Definir variaveis
+
+            Podemos definir variaveis sem lhes atribuir qualquer valor. Chama-se a isto "declarar variaveis". Podemos só escrever:
+
+                    criança
+                    adolescente
+                    adulto
+                    idoso
+
+            E não é necessário definir nada, isto é válido por si e não há nada errado.
+
+            No exemplo, o retorne serve para terminar a funcao porque o imput não é valido. Isto funciona no Python como no JavaScript.
+
+---- PseudoScript -------------------------------------
+
+    Definições:
+
+        VALORES // VALUES:
+
+            Em programação um valor é um pedasso de informação/data, que pode ser atribuido a uma variavel, passado sob forma de argumento para uma função ou utilizado em expressões.
+
+            Valores podem ter varias "formas":
+
+                A - Valores numéricos (0, 25, 999, -70...)
+                B - Valores textuais (strings) ("Hello World!", "Gosto de suhi.", "Amanhã é fim de semana", "whatever and anything"...)
+                C - Valores Verdadeiros ou Falsos(boolean): se algo é verdadeiro, ou falso.
+                D - Arrays, objects etc (mais complexo)
+
+
+                Exemplo:
+
+                    Valores Numéricos:
+
+                        Preço = 10€
+                        Distancia = 250km
+                        Temperatura = 50 °C
+                        Idade = 25
+
+                    Valores Textuais(strings):
+
+                        Nome = "Alice"
+                        Cidade = "Paris"
+                        Email = "exemplo@email.com"
+                        Mensagem = "Bem vindos à ETIC!"
+
+                    Valores verdadeiro/falso(boolean):
+
+                        EspaçoDisponivel = false
+                        AlunoAprovado = true
+                        NúmeroPerfeito = false
+                        ElevadorEmMovimento = true
+
+
+
+        EXPRESSÕES // EXPRESSIONS:
+
+            Uma expressão é uma combinação de valores, variaveis, operadores e chamadas de funções que visão retornar um valor.
+
+            Expressões podem ser simples (5 + 3), ou mais complexas, envolvendo "ses" e "senãos", chamadas de função, e manipulação de dados.
+
+            Em pseudoscript, como em várias linguagens de programação, expressões servem para executar calculos, manipular dados, tomar decisões sob certas condições, e criar logica mais complexa.
+
+                Exemplos de Expressões:
+
+                    - 5 + 3 (simples expressão aritmética de adição)
+                    - ExemploDeVariavel + "é fantastico(a)" (Isto é uma concatenação de valor textual. Concatenar significa "colocar junto a".)
+                    - se (x > 10) então y && z: (qualquer coisa) (Expressão de codições. Se alguma coisa acontecer, então em consequencia outra coisa acontece.)
+
+
+        VARIAVEL // VARIABLE:
+
+            Uma variavel é um contentor que serve para conter informação num programa de computador.
+
+            É como uma caixa identificada na qual podemos arrumar coisas.
+
+                Exemplos de Variaveis:
+
+                    idade = 25
+                    temperatura = 72.5
+                    nome = John
+                    Cor = vermelho
+
+
+        FUNÇÃO // FUNCTION
+
+            Uma função é como um "mini-programa" dentro do nosso programa.
+
+            É uma série de intruções que podemos usar e reutilizar indefinidamente para executar uma tarefa específica.
+
+            Para a função funcionar, ela percisa de informações(chamas de argumentos). Ela pega nessas informações, faz alguma coisa com as mesmas, e retorna um resultado ou executa alguma ação baseada nas suas instruções.
+
+                Exemplos de Funções:
+
+                1. Função para somar dois números
+
+                    funcao somar(a, b)
+                        resultado = a + b
+                        retorne resultado
+
+                2. Função "dizer olá"
+
+                    funcao cumprimentar(nome):
+                        mensagem = "Olá, + nome + "!"
+
+
+            No exemplo 1, os argumentos são "a" e "b".
+
+        OBJETO // OBJECT
+
+            Um objeto é um contentor que pode conter tanto informação como ações (funcões e métodos) relacionadas com algo especifico.
+
+            É um pouco como uma representação virtual de um objeto ou entidade da vida real.
+
+            Um objeto é uma instancia de um conceito ou de alguma coisa e contem as suas informações(propriedades) e ações(métodos) que são ESPECIFICAS a essa instancia.
+
+            Objetos são as entidades que usamos num programa para representar itens ou instancias de um conceito (um carro especifico, uma pessoa especifica...)
+
+                Exemplos de Objetos:
+
+                    1. Objeto Carro
+
+                        carro = (marca->'Opel', modelo->'Corsa', cor->'Branco','emFuncionamento->falso')
+
+                    1.1 metodos relacionados com objeto carro
+
+                        funcao comecar(car):
+                            se car.emFuncionamento = false:
+                                car.emFuncionamento = true
+                                retorne "O carro está ligado."
+                            senao:
+                                retorne "O carro já está em funcionamento."
+
+                        funcao parar(car):
+                            se car.emFuncionamento = true:
+                                car.emFuncionamento = false:
+                                retorne "O carro foi desligado."
+                            senao:
+                                retorne "O carro já está parado."
+
+                        ou (ChatGPT)
+
+                        funcao parar(car):
+                            se car.emFuncionamento:
+                                car.emFuncionamento = falso
+                                retorne "O carro foi desligado."
+                            senao:
+                                retorne "O carro já está parado."
+
+
+
+
+
+
+                    2. Objeto Pessoa
+
+                        pessoa = (nome->'Alice', idade->'30', genero->'feminino', altura->'1.68' )
+
+
+        MODELO ou CLASSE // MODEL or CLASS
+
+            Um modelo(ou classe) é uma "blueprint" ou "template" para criar objetos.
+
+            Define a estrutura(propriedades) e comportamento(métodos) que objetos BASEADOS NESSE MODELO terão.
+
+            Modelis são mais abstratos e servem como ponto de comesso para o design de objetos com caracteristicas ou funcionalidades similares.
+
+                Exemplos de Modelos(ou Classes)
+
+        MÉTODO // METHOD
+
+            Um método é um genero de função que está associada a um objeto. É uma ferramenta utilizada especificamente e unicamente com objetos, para executar ações e obter informações. (em Python e JavaScript)
+
+            É uma série de instruções que quando executadas retornam informação especifica a um objeto.
+
+            Podemos pensar num método como sendo uma ação que um objeto pode fazer, ou uma pergunta que podemos fazer ao objeto:
+
+                Exemplo:
+
+                    Object-Based Action: Para um objeto "carro" podemos ter um método "start", para inicializar o motor do carro.
+
+                    Object-Based Information: Num objeto "pessoa" podemos ter um método "obterIdade", que nos dá informação sobre a idade da pessoa.
+
+
+
+        ARGUMENTO // ARGUMENT (para perceber argumento, tenho de perceber função e método)
+
+            Um argumento é um pedaço de informação que fornecemos a uma função ou a um método para ajudar a executar uma tarefa especifica.
+
+            É um pouco como dar os detalhes necessários a alguem para que ele(a) possa fazer o seu trabalho.
+
+            Argumentos podem ter os seguintes tipos de dado:
+
+                A - Númerico
+                        A1. Inteiro(Integer/Int) - Número Inteiro
+                        A2. Decimal(Floating-Point/Float) - Número com virgula e casas decimais.
+
+                B - Texto(string)- Uma sequencia de caracteres que formam texto ("Hello World!")
+
+                C - Verdadeiro/Falso(Boolean) - Se um valor é verdadiro ou falso.
+
+                D - Lista e Vetor
+                    D1 - Lista(List): Um contentor que contem uma sequencia ordenada de valores.
+                    D2 - Vetor(Array): Um tipo de lista mais especifico cujos elementos são acedidos atravez de um "index".
+
+                E - Objeto(Object): Representa uma extrotura de dados complexa com propriedades e métodos.
+
+                F - Tipo de Dado Custom(Custom Data Type):
+                Podemos criar o nosso próprio tipo de dado definindo classes e estruturas.
+
+        PARAMETRO // PARAMETER
+
+            Um parametro é o(s) nome(s) que servem de "placeholder" que escrevemos entre parenteses quando definimos uma funcao, para definir que tipo de dados a funcao necessita para funcionar e servir de receptabulo para receber argumentos (O actual values que entram na funcao)
+
+                CHAT GPT:
+                Parameters are the placeholders in the function's definition. They are the names used within the function to represent the values that are expected when the function is called.
+
+                Arguments are the actual values or expressions that are provided when you call the function. These are the concrete data that are passed to the function's parameters.
+
+"%" - modulo operator / operador modulo / modulo : Utilizado para descobrir "o que resta" quando dividimos um
+número pelo outro
+
+    Exemplo:
+        10 % 3 = 1     -------> Porque dividindo 10 (de alguma coisa) por 3 (pessoas por exemplo),
+                                de forma igual, cada pessoa fica com 3, e sobra 1. O % serve para
+                                descobrir o "1".
+
+"<-" - Usado para guardar um valor numa variavel em pseudocodigo.
+
+"!=" - Significa "não é igual a", é o contrário de "=="
+
+"entrada-imprime" (aparece no ecra, parte visual.)
+
+retorna = retorna um resultado num contexto unicamente do programa, nada haver com o print (parte visual)
+
+&& (javascript) (and em Python) - significa e. Da para definir varias condições na mesma linha. se (x + y) && (z + n) = h
+
+Um único "=" estamos a atribuir um valor a uma variavel. Dois "==" significa igual.
+
+sempre que houver "retorna" tudo o que há abaixo deixamos de considerar o resto que vem debaixo.
+
+---------------------------------------- Comandos -----------------------------------------
+
+Alt + Z = crop ao texto/ codigo para que seja visivel na totalidade sem fugir da janela
+
+Cada x em [1...10]
+se uma condição
+então faz qualquer coisa #isto é um loop, quando chegar ao fim da lista passa para resto do codigo
+
+-------------------------------------- Common Good Practice --------------------------------
+
+em entradas:
+
+    Exemplo:
+        entrada ("Digite um numero", numero) é bom meter dois pontos depois do texto que faz o imput request
+
+    Assim:
+        entrada ("Digite um numero:", numero)
+
+-------------------------------------- Erros Que Faço Sempre ---------------------------------
+--------------------------------------- (Tentar não fazer) -----------------------------------
+
+1. Não esquecer ":" depois de regras "se" ou "senão"
+
+--------------------------- Frazes do Jorge
+
+"não é preciso saberes, é preciso sabers procurar" (no contexto profissional, fazemos um trabalho numa area, haverá unidades de medida e processos especificos que ninguem nos vai explicar, mas temos de retornar um pedido ao cliente tal com as funcoes que ele pediu. teremos de investigar a area em questao para poerceber as subtilidades, e amanha passaremos potencialmente de uma area para outra. de agricultura para finanças, para fisico-quimica, para advocacia )
+
+----------------------------- Recursos ------------------------
+
+Ver como fazer sondagens no discord
+
+
+Comandos Virtual Box
+
+CONTROL(direito) + F == Toggle Full Screen
+
+
+
+
+Dispositivos - Ativar 1. Area de Tranferencia partilhada e arrastar e largar --> meter em bidirecional
+
+
+\*/

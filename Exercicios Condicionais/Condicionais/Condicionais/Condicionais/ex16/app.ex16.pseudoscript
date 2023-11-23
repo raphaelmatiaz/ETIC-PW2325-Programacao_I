@@ -1,0 +1,20 @@
+/*
+16. Faça um programa que determine se uma pessoa pode votar, considerando a idade mínima
+de 16 anos.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+funcao determinarDireitoVoto(numero)
+    se numero >= 16:
+        print ("Esta pessoa tem idade para votar.")
+    senão:
+        print ("Esta pessoa não tem idade para votar.")
+
+        
+
+entrada ("Insira a sua idade: ", idade)
+funcao determinarDireitoVoto
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+

@@ -1,0 +1,27 @@
+/*
+4. Escreva um programa que compare dois números e imprima o maior.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+entrada ("Insira um número", numero1)
+entrada ("Insira outro número", numero2)
+se numero1 > numero2:
+    imprime numero2
+se numero2 > numero1:
+    imprime numero2
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+# NOTA: convem sempre começar pela função
+
+funcao decideMaior(a, b):
+    se a > b:
+        imprime("{a} é maior do que {b})
+    senão
+        imprime("{b} é maior do que {a})
+
+entrada ("Diga o primeiro numero: ", a)
+entrada ("Diga o segundo numero: ", b)
+
+decideMaisOuMenos(a,b)

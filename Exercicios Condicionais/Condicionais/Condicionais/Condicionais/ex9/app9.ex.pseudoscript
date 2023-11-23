@@ -1,0 +1,20 @@
+/*
+9. Desenvolva um programa que calcule o preço final de um 
+produto, considerando um desconto de 10% se o valor for 
+superior a €100,00.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+funcao userImput():                                           
+entrada("Digite o valor do produto: ", valorProduto)
+    funcao Desconto():
+        se valorProduto < 100,00
+            print ("O valor do produto que inseriu não está eligivel para um desconto de 10%. O preço final do produto é de [valorProduto].")
+        se valorProduto > 100,00:
+            valorProduto * 0.10 <- valorDesconto # multiplicar o valor do produto por 0.10 permite descobrir que valor corresponde a 10% do valor do produto
+            valorProduto - valorDesconto <- PreçoFinal
+            print ("O valor do produto que inseriu está eligivel para um desconto de 10%. O preço final do produto é de [PreçoFinal].")
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+

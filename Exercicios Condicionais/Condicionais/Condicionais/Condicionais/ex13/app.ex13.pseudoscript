@@ -1,0 +1,23 @@
+/*
+13. Desenvolva um programa que calcule o valor do transporte 
+de acordo com a distância percorrida, sendo €1,50 por quilômetro.
+*/
+
+/* Notas:
+
+
+
+
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+funcao userImput():
+    entrada("Que distância(km) necessita de percorrer na sua viagem? ", distancia)
+        funcao CalcularPreco():
+            1.50 * distancia <- valorTransporte
+                print ("Considerando a distancia a percorrer, o valor do transporte é de €[valorTransporte].") 
+            
+
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------

@@ -1,0 +1,72 @@
+/*
+3. Faça um programa que determine se um ano é bissexto.
+*/
+
+#-------- Minha Resolução ---------------------------------------------------------------------------------------------------------
+
+# Resulução A (sozinho)
+
+InicioAno = 0d
+1 ano = 365d
+3 anos = 1095d
+
+AnoBissexto = false
+
+funcao PassarDoTempo():
+    InicioAno = 0d
+    AnoBissexto = false
+    funcao Decorrer.de.1.Ano(): #decorrer de um ano 365 dias
+        se InicioAno =< 364d:
+            InicioAno = InicioAno +1d
+                AnoBissexto = false
+                    immprime ("Não estamos num Ano Bissexto")
+    funcao Decorrer.de.2.Anos(): #decorrer de dois anos 730 dias
+        se InicioAno =< 729d:
+            InicioAno = InicioAno +1d
+                AnoBissexto = false
+                    immprime ("Não estamos num Ano Bissexto")
+    funcao Decorrer.de.1.Ano():
+        se InicioAno =< 1094d: #decorrer de três anos 190 dias
+            InicioAno = InicioAno +1d
+                AnoBissexto = false
+                    immprime ("Não estamos num Ano Bissexto")
+    funcao Decorrer.Ano.bissexto(): # ano bissexto (1460 dias (+1 do ano bissexto))
+        se InicioAno =< 1460d:
+            InicioAno = InicioAno +1d
+                se InicioAno = 1460d:
+                    então AnoBissexto = true
+                        immprime ("Estamos num Ano Bissexto")
+                            funcao PassarDoTempo():
+                        
+
+
+# Resulução B (Com ajuda do ChatGPT)
+
+entrada ("Digite um ano: ", Ano)
+    funcao VerificarAnoBissexto():
+        se (Ano % 4 == 0 e (Ano % 100 != 0 ou Ano % 400 == 0)):
+            imprime("Estamos num Ano Bissexto")
+        senao:
+            imprime("Não estamos num Ano Bissexto")
+
+
+#NOTA: É ano bissexto quando:
+
+/*         1 - O ano é divisivel por 4 (sem left-overs)
+          2 -  Se for divisivel por 100, também precisa de ser divisivel por 400
+          "!=" significa "não igual a". É o contrário de "==" */
+
+#-------- Correção / Resolução na Aula ----------------------------------------------------------------------------------------------
+
+funcao anoBisexto(ano)
+    retorna (ano % 4 == 0) && (ano % 100 !=0)  # se false + false = false // se false + true = false // se true + true = true
+
+entrada("Diga o ano: ", x)
+
+se anoBisexto(x)
+    imprime("O ano " + x + " é bisexto")
+senao:
+    imprime(" O ano" + x + " não é bisexto")    # O "+" serve para concatenar pode ser assim também "imprime ("O ano {x} não é bisexto")
+
+
+

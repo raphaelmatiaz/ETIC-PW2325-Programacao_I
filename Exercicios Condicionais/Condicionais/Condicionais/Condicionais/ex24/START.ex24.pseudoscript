@@ -1,0 +1,46 @@
+# ============== ENUNCIADO ============================================================
+
+# 24. Faça um programa que verifique se um ano é ou não um número de Armstrong.
+
+# ============== NOTAS ============================================================
+
+# =================================================================================
+
+#--------------- Setup -----------------------------------------------
+
+funcao contarDigitos(numero):
+    quantidadeDigitos = 0
+    enquanto numero > 0:
+        quantidadeDigitos = quantidadeDigitos + 1
+        numero = numero / 10
+    retorne quantidadeDigitos
+
+funcao eNumeroDeArmstrong(ano):
+    temp = ano
+    soma = 0
+    quantidadeDigitos = contarDigitos(temp)
+
+    enquanto temp > 0:
+        digito = temp % 10
+        soma = soma + (digito ^ quantidadeDigitos)
+        temp = temp / 10
+
+    retorne soma == ano
+
+#-------------- Execution --------------------------------------------
+
+
+imprime("Verificador de Números de Armstrong (Anos)")
+imprime("")
+entrada("Digite um ano: ", ano)
+
+se eNumeroDeArmstrong(ano):
+    imprime(ano + " é um número de Armstrong (Ano de Armstrong).")
+senao:
+    imprime(ano + " não é um número de Armstrong (Ano não é de Armstrong).")
+
+
+
+
+
+
