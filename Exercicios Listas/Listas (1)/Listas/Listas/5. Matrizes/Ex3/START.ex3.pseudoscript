@@ -1,0 +1,46 @@
+
+# 3. Some duas matrizes e armazene o resultado em uma terceira matriz.
+
+#==========================================
+
+# --------------- SETUP ---------------------------
+
+# Declaração das matrizes 3x3
+matriz1 = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+matriz2 = [
+    [9, 8, 7],
+    [6, 5, 4],
+    [3, 2, 1]
+]
+
+# Inicialização da matriz resultado com zeros
+matrizResultado = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+]
+
+# --------------- EXECUTION ------------------------
+
+imprime("Matriz 1:")
+para cada linha em matriz1:
+    imprime(linha)
+
+imprime("Matriz 2:")
+para cada linha em matriz2:
+    imprime(linha)
+
+# Soma das matrizes
+para cada i de 0 até 2:
+    para cada j de 0 até 2:
+        matrizResultado[i][j] = matriz1[i][j] + matriz2[i][j]
+
+# Imprime a matriz resultado
+imprime("Matriz Resultado (Soma):")
+para cada linha em matrizResultado:
+    imprime(linha)

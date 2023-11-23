@@ -1,0 +1,34 @@
+# 4. Verifique se um array é um palíndromo.
+
+#==========================================
+
+# ------------- Verificar se é Palíndromo ------------------
+
+funcao ehPalindromo(arr):
+    tamanhoArray = tamanho(arr)
+
+    # Itera até o meio do array
+    para i de 0 a tamanhoArray / 2:
+        # Compara os elementos simétricos em relação ao meio
+        se arr[i] != arr[tamanhoArray - 1 - i]:
+            retorne falso  # Se houver uma diferença, não é palíndromo
+
+    retorne verdadeiro  # Se passou por todas as comparações, é palíndromo
+
+# ------------- SETUP ---------------------------
+
+# Exemplo de array para verificar se é palíndromo
+arrayPalindromo = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+
+# ------------- EXECUTION -----------------------
+
+imprime("Array para Verificar se é Palíndromo:")
+imprime(arrayPalindromo)
+
+# Chama a função ehPalindromo para verificar se o array é palíndromo
+se ehPalindromo(arrayPalindromo):
+    imprime("O array é um palíndromo.")
+senao:
+    imprime("O array não é um palíndromo.")
+
+

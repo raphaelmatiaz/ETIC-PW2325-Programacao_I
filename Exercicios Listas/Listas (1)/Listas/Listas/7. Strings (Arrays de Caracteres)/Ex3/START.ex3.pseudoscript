@@ -1,0 +1,38 @@
+# 3. Verifique se uma string é um palíndromo.
+
+#==========================================
+
+# ------------- SETUP ---------------------------
+
+# ------------- Verificar Palíndromo -------------
+
+funcao ePalindromo(texto):
+    tamanho = tamanhoDoTexto(texto)
+    texto = paraMinusculas(texto)  # Considera maiúsculas e minúsculas
+
+    # Itera sobre metade da string
+    para cada indice de 0 ate tamanho / 2:
+        caractereInicio = texto[indice]
+        caractereFim = texto[tamanho - 1 - indice]
+
+        # Se os caracteres nas posições opostas não forem iguais, não é um palíndromo
+        se caractereInicio != caractereFim:
+            retorne falso
+
+    # Se passou por todas as comparações sem retornar falso, é um palíndromo
+    retorne verdadeiro
+
+# Exemplo de string para verificar
+stringExemplo = "Ovo"
+
+# ------------- EXECUTION -----------------------
+
+imprime("String: " + stringExemplo)
+
+# Chama a função ePalindromo para verificar se a string é um palíndromo
+se ePalindromo(stringExemplo):
+    imprime("É um palíndromo.")
+senao:
+    imprime("Não é um palíndromo.")
+
+

@@ -1,0 +1,41 @@
+# 2. Implemente um algoritmo de pesquisa (por exemplo, Linear Search) em um array.
+
+#==========================================
+
+# ------------- SETUP ---------------------------
+
+# ------------- Linear Search ------------------
+
+funcao linearSearch(arr, elemento):
+    tamanho = tamanho(arr)
+
+    para cada i de 0 até tamanho - 1:
+        # Verifica se o elemento atual é igual ao elemento que estamos procurando
+        se arr[i] == elemento:
+            retorne i  # Retorna o índice se o elemento for encontrado
+
+    # Se o elemento não for encontrado, retorna -1
+    retorne -1
+
+# Exemplo de array para pesquisa
+arrayParaPesquisa = [4, 2, 7, 1, 9, 5, 3]
+
+# Elemento a ser pesquisado
+elementoProcurado = 5
+
+# ------------- EXECUTION -----------------------
+
+imprime("Array para Pesquisa:")
+imprime(arrayParaPesquisa)
+imprime("Elemento Procurado:", elementoProcurado)
+
+# Chama a função linearSearch para procurar o elemento no array
+indiceEncontrado = linearSearch(arrayParaPesquisa, elementoProcurado)
+
+# Verifica se o elemento foi encontrado e exibe o resultado
+se indiceEncontrado != -1:
+    imprime("Elemento encontrado no índice:", indiceEncontrado)
+senao:
+    imprime("Elemento não encontrado no array.")
+
+

@@ -1,0 +1,8 @@
+/*
+1. Declare um array vazio.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ArrayVasio = []
+

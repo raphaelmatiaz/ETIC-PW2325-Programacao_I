@@ -1,0 +1,42 @@
+# 5. Rotacione os elementos de um array para a direita.
+
+#==========================================
+
+
+# ------------- SETUP ---------------------------
+
+
+# ------------- Rotacionar para a Direita ------------------
+
+funcao rotacionarParaDireita(arr, k):
+    tamanhoArray = tamanho(arr)
+    
+    # Trata casos em que k pode ser maior que o tamanho do array
+    k = k % tamanhoArray
+    
+    # Cria um novo array para armazenar o resultado da rotação
+    novoArray = novo array[tamanhoArray]
+
+    # Copia os elementos após a rotação para o novo array
+    para i de 0 a tamanhoArray - 1:
+        novoArray[(i + k) % tamanhoArray] = arr[i]
+
+    retorne novoArray
+    
+
+# Exemplo de array para rotacionar
+arrayOriginal = [1, 2, 3, 4, 5]
+posicoesRotacao = 2
+
+# ------------- EXECUTION -----------------------
+
+imprime("Array Original:")
+imprime(arrayOriginal)
+
+# Chama a função rotacionarParaDireita para rotacionar o array
+arrayRotacionado = rotacionarParaDireita(arrayOriginal, posicoesRotacao)
+
+imprime("Array Rotacionado para a Direita:")
+imprime(arrayRotacionado)
+
+

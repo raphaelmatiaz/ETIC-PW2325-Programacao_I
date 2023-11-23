@@ -1,0 +1,12 @@
+/*
+4. Altere o valor do segundo elemento de um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ArrayDeElementos = [1, 2, 3, 4, 5]
+
+terceiroElemento[2] = 10
+
+
+

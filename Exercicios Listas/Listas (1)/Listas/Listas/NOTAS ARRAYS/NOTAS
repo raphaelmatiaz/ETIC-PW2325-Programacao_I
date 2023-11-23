@@ -1,0 +1,30 @@
+/\*
+
+1 - em Array [24, 56, 67, 78, 89]
+Posições do Array = [0, 1, 2, 3, 4]
+
+se eu quiser invocar o 24 para alguma coisa, a posição dele é "0"
+
+se quiser o 67, chamo pelo 3.
+
+se quiser o 89, chamo pelo 4
+
+etc
+
+No Exemplo:
+
+ArrayDeElementos = [1, 2, 3, 4, 5]
+
+terceiroElemento[2] = 10
+
+Estamos a definir um array que contem valores.
+Depois chamamos o elemento com indice/index 2 no array (neste caso o numero 3) e damos um overwrite redefinindo-o com o valor "10".
+
+para aceder a um determinada posição no array, a um determinado elemento da lista podemos "chama-los" em função da posição deles relativamente à lista.
+
+2 - Arrays podem ser utilizados como argumentos em funcoes
+
+    Exemplo:
+
+
+\*/

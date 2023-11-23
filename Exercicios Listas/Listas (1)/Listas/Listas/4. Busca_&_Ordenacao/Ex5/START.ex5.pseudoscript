@@ -1,0 +1,55 @@
+/*
+5. Verifique se um array está ordenado.
+
+#------ Resolução 1 ----------------------------------------
+
+alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+
+UserImputAlfabeto = []
+
+# funcao para receber continuamente imputs, 1 por 1, da parte de um user, e guarda-los num array
+
+funcao receberImputAlfabeto(letra, array)
+    para cada i de 1 a 26:
+        entrada ("Digite uma letra: ", letra)
+            array.adicionar(letra)
+    retorne array
+
+# funcao para comparar tamanhos de um array para outro e verificar a cada indice de elemento entre os dois arrays, se os dois elementos são identicos
+
+funcao verificarAlfabeto(array1, array2)
+    se array1.tamanho == array2.tamanho:
+        para cada elemento em array1:
+            elemento.indice = 0
+            se array1[elemento.indice] == array2[elemento.indice]:
+                elementosIguais = true
+                elemento.indice = elemento.indice +1
+            senao:
+                elementosIguais = false
+                sair                      #sair/return - a ideia é quebrar o loop aqui, porque já sabemos que pelo meno 1 elemento da lista está desordenado
+
+    
+
+    enquanto elementosIguais = false
+        arrayOrdenado = false
+        retorne ("Este array está desordenado!")
+            senão:
+                arrayOrdenado = true
+                retorne ("Este array está ordenada!")
+
+
+imprime ("Digite o alfabeto portuês, letra a letra, e vamos verificar se está na ordem correta:")
+
+funcao receberImputAlfabeto(numero, UserImputAlfabeto)
+
+funcao verificarAlfabeto(alfabeto, UserImputAlfabeto)
+
+
+
+
+
+        
+
+
+
+    

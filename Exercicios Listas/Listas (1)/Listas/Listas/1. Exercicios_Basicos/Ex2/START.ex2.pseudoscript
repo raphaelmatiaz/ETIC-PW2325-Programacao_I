@@ -1,0 +1,8 @@
+/*
+2. Declare um array com 5 números inteiros.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ArrayDeNumerosInteiros = [1, 13, 27,28009, -45]
+

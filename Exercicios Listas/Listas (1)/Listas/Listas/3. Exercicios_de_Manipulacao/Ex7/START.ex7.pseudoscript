@@ -1,0 +1,21 @@
+/*
+7. Encontre a média dos valores em um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array_A = [100, 250, 70, -33, 68, 34, 301]
+
+
+funcao MediaDoArray(array1)
+    soma = 0
+    quantidade = 0
+    para cada elemento em array1:
+        soma = soma + elemento
+        quantidade = quantidade +1
+
+    media = soma / quantidade
+    retorne media
+    
+MediaDoArray(Array_A)
+imprime ("A média do array é de: ", (media))

@@ -1,0 +1,18 @@
+/*
+8. Verifique se um elemento está presente em um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ArrayDeElementos = [1, 2, 3, 4, 5]
+
+funcao verificarSeElementoEmArray(numero)
+    para cada i em ArrayDeElementos:
+        se numero == i
+            print ("O elemeto está presente no array")
+
+
+
+imprime("ArrayDeElementos = [1....5]")
+entrada("insira um numero: ", numero)
+funcao verificarSeElementoEmArray(numero)

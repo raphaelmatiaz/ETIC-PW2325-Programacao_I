@@ -1,0 +1,40 @@
+/*
+1. Some os elementos de dois arrays e armazene o resultado 
+em um terceiro array.
+*/
+
+#------ Resolução 1 ----------------------------------
+
+Array_A = [2, 4, 45, 99]
+
+Array_B = [3, 5, 99009, -200, 558, 12]
+
+Array_C = []
+
+funcao adicionarArrays(array1, array2, array3)
+     cada i em array1 + cada i em array2 <- Array3
+
+funcao adicionarArrays(Array_A, Array_B, Array_C)
+Array_C.adicionar(array3)
+imprime (ArrayC)
+
+
+#-----------------------------------------------------
+
+funcao SomaArrays(lista1, lista2)
+     novoArray = []
+     cada posicao em sequencia de 0 a até lista.tamanho()-1: # iterar de posicao x ate y"
+          novoArray.adicionar(lista1[posicao]+lista2[posicao]) #adicionar uma posicao a outra e armazena-las no 3rd array
+
+
+array1 = [1, 2, 3]
+
+array2 = [2, 4, 6]
+
+SomaArrays(array1, array2)
+
+imprime ("O resultado da soma dos arrays é:" {SomaArrays(array1,array2)})
+
+#podemos iterar pelo index "para cada POSICAO em sequencia de x ate y" da mesma forma que podemos iterar "para cada elemento em" 
+
+

@@ -1,0 +1,42 @@
+# 1. Implemente um algoritmo de ordenação (por exemplo, Bubble Sort) para ordenar um array.
+
+#==========================================
+# ------------- SETUP ------------------------
+
+
+# ------------- Bubble Sort ------------------
+
+funcao bubbleSort(arr):
+    tamanho = tamanho(arr)
+
+    para cada i de 0 até tamanho - 1:
+        trocas = falso
+
+        # Últimos i elementos já estão ordenados, não precisamos verificá-los novamente
+        para cada j de 0 até tamanho - i - 1:
+            se arr[j] > arr[j + 1]:
+                # Troca os elementos se estiverem fora de ordem
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+                trocas = verdadeiro
+
+        # Se não houve trocas, o array está ordenado
+        se trocas == falso:
+            parar
+
+# Exemplo de array desordenado
+arrayDesordenado = [64, 34, 25, 12, 22, 11, 90]
+
+# ------------- EXECUTION ---------------------
+
+imprime("Array Original:")
+imprime(arrayDesordenado)
+
+# Chama a função bubbleSort para ordenar o array
+bubbleSort(arrayDesordenado)
+
+imprime("Array Ordenado:")
+imprime(arrayDesordenado)
+
+

@@ -1,0 +1,27 @@
+# 4. Concatene duas strings.
+
+#==========================================
+
+# ------------- SETUP ---------------------------
+
+# ------------- Concatenar Strings -------------
+
+funcao concatenarStrings(string1, string2):
+    resultado = string1 + string2
+    retorne resultado
+
+# Exemplos de strings para concatenar
+string1 = "Hello, "
+string2 = "world!"
+
+# ------------- EXECUTION -----------------------
+
+imprime("String 1: " + string1)
+imprime("String 2: " + string2)
+
+# Chama a função concatenarStrings para unir as duas strings
+resultadoConcatenado = concatenarStrings(string1, string2)
+
+imprime("Concatenado: " + resultadoConcatenado)
+
+

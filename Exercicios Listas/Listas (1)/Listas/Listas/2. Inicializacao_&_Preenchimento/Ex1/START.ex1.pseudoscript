@@ -1,0 +1,13 @@
+/*
+1. Inicialize um array com os números de 1 a 10.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ExemploDeArray = []  # DECLARAR o array (sem nada lá dentro. É um array vasio.)
+
+ExemploDeArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] # INICIALIZAR o array (colocar cenas la dentro)
+
+#------ Resolução 2 ----------------------------------------
+
+ExemploDeArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] # DECLARAR e INICIALIZAR o array de uma só vez. (codigo mais conciso).

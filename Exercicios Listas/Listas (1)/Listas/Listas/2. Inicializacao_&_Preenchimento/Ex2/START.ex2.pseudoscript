@@ -1,0 +1,63 @@
+/*
+2. Preencha um array com valores fornecidos pelo usuário.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array = []   # Declarar um array vasio
+
+
+# Pedir uma sucessão de imputs ao utilizador e adicionar cada um ao array
+Entrada ("Insira um valor: ", a) 
+    Array.adicionar(a)
+Entrada ("Insira outro valor: ", b)
+    Array.adicionar(b)
+Entrada ("Insira outro valor: ", c)
+    Array.adicionar(c)
+Entrada ("Insira outro valor: ", d)
+    Array.adicionar(d)
+Entrada ("Insira um ultimo valor: ", e)
+    Array.adicionar(e)
+
+imprime (Array) # imprimir o array
+
+
+#------- Resolução 2 -----------------------------------
+
+funcao PreencheArray(totalElementos)
+    resultado = []
+    para cada i de 1 a totalElementos
+        entrada ("Digite um numero", numero)
+        array.adicionar numero
+
+    retorne resultado 
+
+entrada ("Quantos elementos quer inserir? ", totalElementos)
+
+array = PreencheArray (totalElementos)
+
+imprime("aqui está o seu array: {array"})
+
+#------- Resolução em Aula --------------------------------
+
+funcao PreencheArray(totalElementos)
+
+entrada ("Quantos elementos quer inserir? ", totalElementos)
+
+array = PreencheArray(totalElementos)
+
+imprime ("aqui está o seu array: {}")
+
+
+para cada i de 1 a totalElementos
+    entrada ("Digite um numero", numero)
+        array.adicionar numero
+
+#------- Versao do Joao -------------------------------
+
+funcao PreencheArray(totalElementos):
+    resultado = []
+
+    posicao = 0
+    enquanto posicao < totalElementos:
+        entrada("Qual o {}º numero: ", reultado[posicao])

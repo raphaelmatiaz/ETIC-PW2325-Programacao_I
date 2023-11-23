@@ -1,0 +1,35 @@
+# 2. Inverta uma string.
+
+#==========================================
+
+# ------------- SETUP ---------------------------
+
+
+# ------------- Inverter String -----------------
+
+funcao inverterString(texto):
+    tamanho = tamanhoDoTexto(texto)
+    textoInvertido = ""
+
+    # Itera sobre cada caractere na string, do último para o primeiro
+    para cada indice de tamanho - 1 ate 0 passo -1:
+        caractere = texto[indice]
+        textoInvertido = textoInvertido + caractere
+
+    retorne textoInvertido
+
+# Exemplo de string para inverter
+stringExemplo = "Ola, mundo!"
+
+# ------------- EXECUTION -----------------------
+
+imprime("String Original:")
+imprime(stringExemplo)
+
+# Chama a função inverterString para inverter a string
+stringInvertida = inverterString(stringExemplo)
+
+imprime("String Invertida:")
+imprime(stringInvertida)
+
+

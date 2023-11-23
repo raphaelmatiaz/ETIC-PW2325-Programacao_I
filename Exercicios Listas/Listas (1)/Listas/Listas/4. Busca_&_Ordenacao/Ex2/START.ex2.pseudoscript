@@ -1,0 +1,143 @@
+/*
+2. Ordene os elementos de um array em ordem crescente.
+*/
+
+#------ Resolução 1 (não correu bem, ver Resolução 2) ----------------------------------------
+
+se A é maior que B --- a
+se A é menor que B --- B
+se A é igual a B ----- c
+
+se B é maior que C ----- d
+se B é menor que C --- e
+se B é igual a C ----- f
+
+
+
+
+Array_A = [20, 30, 10, 5, 50]
+
+Array_B = [0]
+
+maiorNumero = 0
+
+
+#Determinar o número mais alto num array
+
+funcao determinarMaiorNumero(array1, array2)
+    maiorNumero = 0
+    para cada elemento em array1:
+        se elemento > maiorNumero:
+            array2[0] = elemento
+            maiorNumero = array2[0]
+    retorne array2
+    
+#Determinar o número mais pequeno num array
+
+funcao determinarMaiorNumero(array1, array2)
+    menorNumero = 0
+    para cada elemento em array1:
+        se elemento < maiorNumero:
+            array2[0] = elemento
+            menorNumero = array2[0]
+    retorne array2
+
+#Determinar tamanho do array
+
+funcao tamanhoArray(array)
+    tamanho = 0
+    para cada elemento em array:
+        tamanho = tamanho +1
+    retorne tamanho
+
+# Ordenar de forma crescente um array
+
+funcao ordenarArray(numero) #definir a funcao
+    OrdemCrescente = [] #definir um array vasio para colher a ordem crescente
+        para cada elemento em Array:
+            se elemento > maiorNumero
+                OrdemCrescente.adicionar(elemento)
+                NumeroMaisBaixo[0] = elemento
+
+# Fim de declarações & "Correr o Programa"
+
+determinarMaiorNumero(array1, array2)
+
+determinarMaiorNumero(array1, array2)
+
+tamanhoArray(array)
+
+
+
+#------ Resolução "Easy Mode" com ajuda do CHAT GPT (esta não vale, ver Resolução 2) ----------------------------------------
+
+Array = [5, 2, 9, 8, 3]
+
+imprime("Array desordenado: " + Array)
+
+Array.Ordenar()
+
+imprime("Array ordenado por ordem crescente: " + Array)
+
+#------ Resolução 2 ----------------------------------------
+#2. Ordene os elementos de um array em ordem crescente.
+
+
+ArrayDesordenado = [12, 11, 9, 10, 13, 15, 14]
+
+ArrayDeVariaveis = [a, b, c, d, e, f, g]
+
+
+funcao separarArrayEmVariaveis(array1, array2)
+    para cada elemento em array:
+        startingIndex = 0
+        array2[startingIndex].adicionar(array1[startingIndex]) # pegar em cada elemento de array 1, um por um, e adiciona-los a uma variavel, contida no array2 (array2 sendo um array que contem variaveis vasias)
+        startingIndex = startingIndex +1
+
+a = 12
+
+b = 11
+
+c = 9 x
+
+d = 10
+
+e = 13
+
+f = 15 x
+
+G = 14
+
+
+f = maiorvariavel
+
+c = menor
+
+                    a(12), b(11), d(10), e(13), g(14)
+
+ArrayOrdenado = [9(c), 11(b), 12(a), 10(d)    ..............................f(15)]
+
+se a for maior que c e menor que f = mete o a a frente do C
+se b for maior que c e maior que a e menor que f = mete b em frente ao A
+    senao mete b entre o c e o a 
+se "D" for maior que C, B e A e menor que F = mete "D" em frente a 
+
+
+funcao porAsCoisasBem(x onde x é o numero de variaveis)
+    array = [c]                        # array = [9]   (good)
+    se a > c && < f:
+        array.adicionar(a)             # array = [9, 12] (good)
+    se (b > c) && (b > a) && (b < f):
+        array.adicionar(b)             # array = [9,12,11] (wrong)
+    senão:
+        se (b > c) && (b < a) && (b < f):
+            array[1] = b && array.adicionar A         # array = [9, 11, 12] (good)
+    se (d > c) && (d > a) && (d > b) && < f:
+        array.adicionar(d)                            # array = [9, 11, 12, 10] (wrong)
+    senão:
+        se (d > c) && (d > a) && (d < b) && (d < f):
+
+
+
+a = 12    b = 11    c = 9     d = 10    e = 13    f = 15 x    G = 14
+

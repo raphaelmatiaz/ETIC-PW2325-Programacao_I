@@ -1,0 +1,26 @@
+
+# 2. Preencha uma matriz com valores fornecidos pelo usuário.
+
+#==========================================0
+
+# --------------- SETUP ---------------------------
+
+# Declaração da matriz 3x3
+matriz = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+]
+
+# --------------- EXECUTION ------------------------
+
+imprime("Preencha a matriz 3x3:")
+para cada i de 0 até 2:
+    para cada j de 0 até 2:
+        entrada("Digite um valor para a posição (" + {i} + ", " + {j} + "): ", valor)
+        matriz[i][j] = converterParaNumero(valor)
+
+# Imprime a matriz preenchida
+imprime("Matriz Preenchida:")
+para cada linha em matriz:
+    imprime(linha)

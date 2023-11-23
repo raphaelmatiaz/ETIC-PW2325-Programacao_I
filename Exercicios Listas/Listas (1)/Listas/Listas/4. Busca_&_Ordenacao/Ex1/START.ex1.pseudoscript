@@ -1,0 +1,19 @@
+/*
+1. Busque a posição de um elemento em um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array = [1, 2, 3, 4, 5]
+
+# funcao para determinar o indice de um elemento de uma array pré-definio
+
+funcao determinarPosicao(numero)
+    indexNumero = numero -1
+    retorne indexNumero
+
+imprime ("Array = [1, 2, 3, 4, 5]")
+entrada ("Digite um dos números presentes no array: ", numero)
+
+determinarPosicao(numero)
+imprime ("A posição do número " + numero + "é a " + indexNumero + "ª posição deste array!")

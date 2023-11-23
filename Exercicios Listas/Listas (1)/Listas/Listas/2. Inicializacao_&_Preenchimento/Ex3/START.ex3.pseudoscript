@@ -1,0 +1,7 @@
+/*
+3. Inicialize um array com 5 repetições do número 3.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array = [3, 3, 3, 3, 3]   

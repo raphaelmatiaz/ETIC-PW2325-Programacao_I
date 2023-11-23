@@ -1,0 +1,13 @@
+/*
+5. Preencha um array com os meses do ano.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ArrayMesesDoAno = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+
+#------ Resolução 2 ----------------------------------------
+
+ArrayMesesDoAno = ["janeiro"..."dezembro"]
+
+

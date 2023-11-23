@@ -1,0 +1,7 @@
+/*
+4. Crie um array com os dias da semana.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ArrayDiasDaSemana = ["segunda-feira", "terça-feira", "quarta-feira", "quinta-feira", "sexta-feira", "sábado", "domingo"]   

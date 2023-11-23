@@ -1,0 +1,19 @@
+/*
+3. Copie os elementos de um array para outro.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array_A = [1, 2, 3, 4]
+
+Array_B = []
+
+
+funcao CopiarElementosArray(array1, array2)
+    para cada elemento em array1:
+        array2.adicionar(elemento)
+
+CopiarElementosArray(Array_A,Array_B)
+imprime(Array_B)
+
+

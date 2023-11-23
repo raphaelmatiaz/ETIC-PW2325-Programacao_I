@@ -1,0 +1,13 @@
+/*
+4. Implemente a busca binária em um array ordenado.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array = [5, 2, 9, 8, 3]
+
+imprime("Array desordenado: " + Array)
+
+Array.Ordenar()
+
+imprime("Array ordenado por ordem crescente: " + Array)

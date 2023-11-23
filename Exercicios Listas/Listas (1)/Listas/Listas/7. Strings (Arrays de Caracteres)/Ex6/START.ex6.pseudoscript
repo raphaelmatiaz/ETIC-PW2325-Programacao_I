@@ -1,0 +1,26 @@
+# 6. Quebre uma string em um array de palavras.
+
+#==========================================
+
+# ------------- SETUP ---------------------------
+
+# ------------- Quebrar String em Palavras -------------
+
+funcao quebrarStringEmPalavras(string):
+    palavras = dividir(string)
+    retorne palavras
+
+
+# Exemplo de string para quebrar em palavras
+minhaString = "Isso é uma frase simples."
+
+# ------------- EXECUTION -----------------------
+
+imprime("String Original: " + minhaString)
+
+# Chama a função quebrarStringEmPalavras para obter o array de palavras
+arrayDePalavras = quebrarStringEmPalavras(minhaString)
+
+imprime("Array de Palavras: " + arrayDePalavras)
+
+

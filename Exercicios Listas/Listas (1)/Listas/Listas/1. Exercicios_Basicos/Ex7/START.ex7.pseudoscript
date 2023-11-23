@@ -1,0 +1,12 @@
+/*
+7. Verifique o tamanho de um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ArrayDeElementos = [1, 2, 3, 4, 5]
+
+funcao verificarTamanhoArray
+    para cada i em ArrayDeElementos
+        adicionar 1 a tamanhoDoArray
+            print "Este array tem (tamanhoDoArray) elementos."

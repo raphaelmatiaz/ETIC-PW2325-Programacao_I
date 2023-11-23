@@ -1,0 +1,57 @@
+/*
+5. Remova elementos duplicados de um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array_A = [1, 113, 1, 2, 44, 44, 89, 4, 2]
+
+Array_B = []
+
+Array_C = []
+
+
+funcao removerDuplicados(array1, array2, array3)
+    para cada elemento em array1:
+        se elemento não está em array2:
+            array2.adicionar(elemento)
+        senão:
+            array3.adicionar(elemento)
+
+    retorne array2
+    retorne array3
+
+
+removerDuplicados(Array_A, Array_B, Array_C)
+imprime ("Array original: ", (Array_A))
+imprime ("Novo array sem elementos duplicados: ", (Array_B))
+imprime ("Elementos duplicados removidos: ", (Array_C))
+
+#--------- Resolucao em Aula ---------------------------------
+
+lista = [1, 2, 3, 4, 4, 5, 6, 6, 7, 8]
+
+funcao removeDuplicados
+    mapa = ()
+
+    cada elemento em array:
+        se elemento está em mapa.chaves():
+            mapa[elemento] ++
+        senao:
+            mapa[elemento] = 0
+
+    resultado = []
+    cada chave em mapa.chaves():
+        resultado.adiciona(chave)
+
+    retorna resultado
+
+#NOTA: dicionario ou mapa. associar cada elemento num array possui um valor e uma chave. Chave tem que ser unical. A chave pode ser outro objeto. o primeiro operador pode ser o que quisermos, o segundo pode ser o que quisermos. Identificaçoes unica mas os valores podem repetir-se
+
+#Como um numero de telefone:
+
+1234 - zé
+9585 - maria
+5758 - joaquim
+
+

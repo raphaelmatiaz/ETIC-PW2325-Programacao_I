@@ -1,0 +1,26 @@
+/*
+6. Encontre o maior valor em um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array_A = [24, 1, 113, 0, 1, 4000, 2, 44, 44, 89, 4, 2]
+
+Array_B = [0]
+
+maiorNumero = 0
+
+
+
+funcao determinarMaiorNumero(array1, array2)
+    maiorNumero = 0
+    para cada elemento em array1:
+        se elemento > maiorNumero:
+            array2[0] = elemento
+            maiorNumero = array2[0]
+    retorne array2
+    
+
+
+determinarMaiorNumero(Array_A, Array_B)
+imprime ("O maior número é: ", (Array_B))

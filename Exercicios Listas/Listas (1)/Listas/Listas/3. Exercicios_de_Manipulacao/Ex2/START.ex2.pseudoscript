@@ -1,0 +1,23 @@
+/*
+2. Concatene dois arrays.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array_A = [2, 4, 45, 99]
+
+Array_B = [3, 5, 99009, -200, 558, 12]
+
+Array_C = []
+
+
+
+funcao ConcatenarArrays(array1, array2, array3)
+    para cada elemento em array1:
+        array3.adicionar(elemento)
+    para cada elemento em array2:
+        array3.adicionar(elemento)
+
+
+ConcatenarArrays(Array_A, Array_B, Array_C)
+imprime(Array_C)

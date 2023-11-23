@@ -1,0 +1,32 @@
+# 5. Substitua todas as ocorrências de uma letra por outra em uma string.
+
+#==========================================
+
+# ------------- SETUP ---------------------------
+
+# ------------- Substituir Letras -------------
+
+funcao substituirLetras(string, letraAntiga, letraNova):
+    resultado = ""
+    para cada caractere em string:
+        se caractere == letraAntiga:
+            resultado = resultado + letraNova
+        senao:
+            resultado = resultado + caractere
+    retorne resultado
+
+# Exemplo de string para substituir letras
+minhaString = "banana"
+letraAntiga = "a"
+letraNova = "o"
+
+# ------------- EXECUTION -----------------------
+
+imprime("String Original: " + minhaString)
+
+# Chama a função substituirLetras para substituir as letras
+resultadoSubstituido = substituirLetras(minhaString, letraAntiga, letraNova)
+
+imprime("String Modificada: " + resultadoSubstituido)
+
+

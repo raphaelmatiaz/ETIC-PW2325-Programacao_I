@@ -1,0 +1,19 @@
+
+# 1. Declare uma matriz 3x3.
+
+#==========================================0
+
+# --------------- SETUP ---------------------------
+
+# Declaração da matriz 3x3
+matriz = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+]
+
+# --------------- EXECUTION ------------------------
+
+imprime("Matriz 3x3:")
+para cada linha em matriz:
+    imprime(linha)

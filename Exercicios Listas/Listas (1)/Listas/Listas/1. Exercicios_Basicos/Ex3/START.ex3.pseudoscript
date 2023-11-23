@@ -1,0 +1,9 @@
+/*
+3. Acesse o terceiro elemento de um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+ArrayDeElementos = [1, 13, 27,28009, -45]
+
+terceiroElemento = ArrayDeElementos[2]

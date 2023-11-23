@@ -1,0 +1,15 @@
+/*
+3. Copie os elementos de um array para outro.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array = [5, 2, 9, 8, 3]
+
+imprime("Array desordenado: " + Array)
+
+Array.OrdenarInvertido()
+
+imprime("Array ordenado por ordem crescente: " + Array)
+
+

@@ -1,0 +1,40 @@
+/*
+4. Inverta a ordem dos elementos em um array.
+*/
+
+#------ Resolução 1 ----------------------------------------
+
+Array_A = [1, 2, 3, 4]
+
+Array_B = []
+
+
+
+
+funcao inverterOrdemArray(array1, array2)
+    para cada elemento em array1 em ordem reversa:
+        array2.adicionar(elemento)
+    retorne array2
+
+
+inverterOrdemArray(Array_A, Array_B)
+imprime ("Array original: ", (Array_A))
+imprime ("Array invertido: ", (Array_B))
+
+#------- Resolucao em Aula -----------------------------------
+
+funcao InverterArray(lista):
+    maxIndex = lista.tamanho()-1
+    novaLista = []
+    enquanto maxIndex>=0
+        novaLista.adiciona(lista[maxIndex])
+        maxIndex = maxIndex -1
+    retorna novaLista
+
+lista = 9, 8, 7, 6, 5, 4, 3, 2, 1
+
+imprime("o seu array invertido é: {InverteArray(lista)}")
+
+
+como sair de um loop?
+quando devemos ou não usar retorne? #break ou saida para sair de um loop
